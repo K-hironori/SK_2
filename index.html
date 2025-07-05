@@ -3,867 +3,658 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI × LINE構築サービス | 次世代マーケティング自動化</title>
-    <meta name="description" content="開封率95%超、リピート率5倍を実現するAI powered LINE構築サービス。無料戦略セッションで売上を爆発的に成長させませんか？">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>一色SKクラブ | 全国準優勝の実績を持つ中学軟式野球チーム</title>
+    <meta name="description" content="西尾市一色町の中学軟式野球チーム「一色SKクラブ」。全国準優勝の実績と豊富な経験で、野球技術と人間性の成長を全力サポート。体験練習は公式LINEから随時受付中！">
     <style>
-        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #fff;
-            background: #0A0A0A;
-            overflow-x: hidden;
+            color: #333;
+            background-color: #f8f9fa;
         }
-
-        /* Glass Morphism Effects */
-        .glass-morphism {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .glass-morphism-dark {
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .text-gradient {
-            background: linear-gradient(135deg, #06C755, #00FF88, #06C755);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .neon-border {
-            box-shadow: 0 0 20px rgba(6, 199, 85, 0.5), inset 0 0 20px rgba(6, 199, 85, 0.1);
-        }
-
-        .particle-bg {
-            background-image: 
-                radial-gradient(circle at 25% 25%, rgba(6, 199, 85, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(0, 255, 136, 0.1) 0%, transparent 50%);
-        }
-
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #0A0A0A 0%, #1a1a1a 25%, #06C755 100%);
+        
+        /* ヘッダー */
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
             color: white;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
+            padding: 60px 0;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
-
-        .hero::before {
+        
+        .header::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(to-br, from-black/60 via-transparent to-black/40);
-            z-index: 1;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><path d="M0,0 L1000,100 L1000,0 Z"/></svg>');
+            background-size: cover;
         }
-
-        /* Floating geometric shapes */
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 20%;
-            left: 15%;
-            width: 200px;
-            height: 200px;
-            background: rgba(6, 199, 85, 0.1);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-            z-index: 1;
-        }
-
-        .hero-content {
+        
+        .header-content {
             position: relative;
-            z-index: 2;
-            text-align: center;
-            animation: slideUp 1s ease-out;
+            z-index: 1;
         }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(6, 199, 85, 0.2);
-            border: 1px solid rgba(6, 199, 85, 0.3);
-            padding: 10px 24px;
-            border-radius: 25px;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 24px;
-            backdrop-filter: blur(10px);
-            color: #00FF88;
+        
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-
-        .hero h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 900;
-            margin-bottom: 24px;
-            line-height: 1.1;
-        }
-
-        .hero-highlight {
-            background: linear-gradient(135deg, #06C755, #00FF88, #06C755);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-
-        .hero p {
-            font-size: clamp(1.2rem, 4vw, 1.8rem);
+        
+        .sub-title {
+            font-size: 1.2rem;
             margin-bottom: 40px;
             opacity: 0.9;
-            font-weight: 300;
-            color: #E0E0E0;
         }
-
-        .cta-button {
+        
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .btn {
             display: inline-block;
-            background: linear-gradient(45deg, #06C755, #00FF88);
-            color: #000;
-            padding: 18px 40px;
+            padding: 15px 30px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 1.3rem;
+            font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 0 20px rgba(6, 199, 85, 0.5), inset 0 0 20px rgba(6, 199, 85, 0.1);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 0 30px rgba(6, 199, 85, 0.7), inset 0 0 30px rgba(6, 199, 85, 0.2);
-        }
-
-        /* Stats Section */
-        .stats {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-            padding: 100px 0;
-            position: relative;
-        }
-
-        .stats::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(6, 199, 85, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(0, 255, 136, 0.08) 0%, transparent 50%);
-            z-index: 1;
-        }
-
-        .stats .container {
-            position: relative;
-            z-index: 2;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
             text-align: center;
+            min-width: 280px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
-
-        .stat-item {
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 50px 30px;
-            border-radius: 25px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #06C755, #00FF88);
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-        }
-
-        .stat-item:hover::before {
-            transform: translateX(0);
-        }
-
-        .stat-item:hover {
-            transform: translateY(-15px) scale(1.05);
-            background: rgba(6, 199, 85, 0.1);
-            border-color: rgba(6, 199, 85, 0.3);
-            box-shadow: 0 25px 50px rgba(6, 199, 85, 0.3);
-        }
-
-        .stat-number {
-            font-size: 4rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #06C755, #00FF88);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 15px;
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 1.2rem;
-            color: #E0E0E0;
-            font-weight: 500;
-        }
-
-        /* Problems Section */
-        .problems {
-            background: linear-gradient(135deg, #0A0A0A 0%, #1a1a1a 100%);
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
             color: white;
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
         }
-
-        .problems::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 75% 25%, rgba(255, 0, 85, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 25% 75%, rgba(255, 136, 0, 0.08) 0%, transparent 50%);
-            z-index: 1;
+        
+        .btn-secondary {
+            background: linear-gradient(45deg, #00b894, #00cec9);
+            color: white;
         }
-
-        .problems .container {
-            position: relative;
-            z-index: 2;
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
-
+        
+        /* セクション共通 */
+        .section {
+            padding: 80px 0;
+        }
+        
         .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
             text-align: center;
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 900;
-            margin-bottom: 20px;
+            margin-bottom: 50px;
+            color: #2c3e50;
         }
-
+        
         .section-subtitle {
-            text-align: center;
-            font-size: 1.3rem;
-            margin-bottom: 80px;
-            opacity: 0.8;
-            color: #B0B0B0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #34495e;
         }
-
-        .problems-grid {
+        
+        /* 理念セクション */
+        .vision-section {
+            background: white;
+        }
+        
+        .vision-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .highlight {
+            background: linear-gradient(transparent 60%, #ffeaa7 60%);
+            font-weight: 600;
+            padding: 0 5px;
+        }
+        
+        /* 選ばれる理由セクション */
+        .reasons-section {
+            background: #f8f9fa;
+        }
+        
+        .reasons-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 40px;
+            margin-top: 50px;
         }
-
-        .problem-card {
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 25px;
+        
+        .reason-card {
+            background: white;
             padding: 40px;
-            text-align: center;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
-
-        .problem-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #FF4757, #FF6B7A);
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
+        
+        .reason-card:hover {
+            transform: translateY(-5px);
         }
-
-        .problem-card:hover::before {
-            transform: translateX(0);
-        }
-
-        .problem-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            background: rgba(255, 71, 87, 0.1);
-            border-color: rgba(255, 71, 87, 0.3);
-            box-shadow: 0 25px 50px rgba(255, 71, 87, 0.2);
-        }
-
-        .problem-icon {
-            font-size: 4rem;
-            margin-bottom: 25px;
-            filter: drop-shadow(0 0 10px rgba(255, 71, 87, 0.5));
-        }
-
-        .problem-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #FFFFFF;
-        }
-
-        .problem-text {
-            opacity: 0.8;
-            line-height: 1.6;
-            color: #E0E0E0;
-            font-size: 1.1rem;
-        }
-
-        /* Solutions Section */
-        .solutions {
-            background: linear-gradient(135deg, #1a1a1a 0%, #0A0A0A 100%);
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .solutions::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 30% 40%, rgba(6, 199, 85, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 70% 60%, rgba(0, 255, 136, 0.08) 0%, transparent 50%);
-            z-index: 1;
-        }
-
-        .solutions .container {
-            position: relative;
-            z-index: 2;
-        }
-
-        .solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 40px;
-        }
-
-        .solution-card {
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 25px;
-            padding: 40px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .solution-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #06C755, #00FF88);
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-        }
-
-        .solution-card:hover::before {
-            transform: translateX(0);
-        }
-
-        .solution-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            background: rgba(6, 199, 85, 0.1);
-            border-color: rgba(6, 199, 85, 0.3);
-            box-shadow: 0 25px 50px rgba(6, 199, 85, 0.3);
-        }
-
-        .solution-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #06C755, #00FF88);
-            border-radius: 20px;
+        
+        .reason-number {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 25px;
-            transition: all 0.3s ease;
-        }
-
-        .solution-card:hover .solution-icon {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 0 30px rgba(6, 199, 85, 0.6);
-        }
-
-        .solution-title {
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 20px;
-            color: #FFFFFF;
         }
-
-        .solution-text {
-            color: #E0E0E0;
-            line-height: 1.6;
-            margin-bottom: 20px;
+        
+        .reason-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .reason-text {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        /* 保護者向けセクション */
+        .parents-section {
+            background: white;
+        }
+        
+        .parents-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .fee-info {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 5px solid #3498db;
+        }
+        
+        .fee-list {
+            list-style: none;
             font-size: 1.1rem;
         }
-
-        .solution-benefit {
-            background: rgba(6, 199, 85, 0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(6, 199, 85, 0.3);
-            color: #00FF88;
-            padding: 12px 18px;
-            border-radius: 15px;
+        
+        .fee-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .fee-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
             font-weight: 600;
-            font-size: 1rem;
         }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #06C755, #00FF88);
-            padding: 80px 0;
+        
+        /* LINEセクション */
+        .line-section {
+            background: linear-gradient(135deg, #00c851, #007e33);
+            color: white;
             text-align: center;
         }
-
-        .cta-section h2 {
-            color: #000;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 900;
-            margin-bottom: 20px;
-        }
-
-        .cta-section p {
-            color: rgba(0, 0, 0, 0.8);
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-        }
-
-        .cta-form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: grid;
-            gap: 20px;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .form-input, .form-textarea {
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1rem;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-        }
-
-        .form-input:focus, .form-textarea:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
-        }
-
-        .form-textarea {
-            grid-column: 1 / -1;
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submit-button {
-            background: #000;
-            color: white;
-            padding: 18px 40px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-button:hover {
-            background: #333;
-            transform: translateY(-2px);
-        }
-
-        /* Footer */
-        .footer {
-            background: #1a1a1a;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .footer-content {
+        
+        .line-benefits {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 30px;
+            gap: 30px;
+            margin: 40px 0;
         }
-
-        .footer-section h3 {
-            color: #06C755;
-            margin-bottom: 15px;
+        
+        .line-benefit {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
         }
-
-        .footer-section ul {
-            list-style: none;
+        
+        .line-benefit-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
         }
-
-        .footer-section ul li {
-            margin-bottom: 8px;
-            opacity: 0.8;
+        
+        .qr-code {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+            margin: 20px 0;
         }
-
-        .footer-section ul li:hover {
-            opacity: 1;
-            color: #06C755;
+        
+        /* 活動概要セクション */
+        .activity-section {
+            background: white;
+        }
+        
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .activity-item {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            border-top: 4px solid #3498db;
+        }
+        
+        .activity-label {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .activity-value {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        /* FAQ セクション */
+        .faq-section {
+            background: #f8f9fa;
+        }
+        
+        .faq-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            background: #3498db;
+            color: white;
+            padding: 20px;
+            font-weight: 600;
             cursor: pointer;
+            position: relative;
         }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-            opacity: 0.6;
+        
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
         }
-
-        /* Animations */
-        @keyframes slideUp {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+        
+        .faq-answer {
+            padding: 20px;
+            line-height: 1.7;
         }
-
-        @keyframes float {
-            0%, 100% { 
-                transform: translateY(0px); 
-            }
-            50% { 
-                transform: translateY(-20px); 
-            }
+        
+        /* クロージングセクション */
+        .closing-section {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            text-align: center;
         }
-
-        @keyframes glow {
-            from { 
-                text-shadow: 0 0 20px #06C755, 0 0 30px #06C755, 0 0 40px #06C755; 
-            }
-            to { 
-                text-shadow: 0 0 10px #06C755, 0 0 20px #06C755, 0 0 30px #06C755; 
-            }
+        
+        .closing-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
-
-        @keyframes fadeIn {
-            from { 
-                opacity: 0; 
-            }
-            to { 
-                opacity: 1; 
-            }
+        
+        .closing-message {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
         }
-
-        /* Responsive Design */
+        
+        /* フッター */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        /* レスポンシブ */
         @media (max-width: 768px) {
-            .form-row {
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .sub-title {
+                font-size: 1rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .reasons-grid {
                 grid-template-columns: 1fr;
             }
             
-            .hero {
-                padding: 40px 0;
-                min-height: auto;
+            .reason-card {
+                padding: 30px;
             }
             
-            .container {
-                padding: 0 15px;
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                min-width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero particle-bg">
-        <!-- Floating geometric shapes -->
-        <div style="position: absolute; top: 15%; right: 15%; width: 150px; height: 150px; background: rgba(0, 255, 136, 0.1); border-radius: 50%; animation: float 8s ease-in-out infinite; animation-delay: -2s; z-index: 1;"></div>
-        <div style="position: absolute; bottom: 20%; left: 10%; width: 100px; height: 100px; background: rgba(6, 199, 85, 0.15); transform: rotate(45deg); animation: float 10s ease-in-out infinite; animation-delay: -4s; z-index: 1;"></div>
-        
+    <header class="header">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">🚀 次世代型LINE構築サービス</div>
-                <h1>
-                    <span style="color: #fff;">友だち登録が</span><br>
-                    <span class="hero-highlight">売上に変わる</span><br>
-                    <span style="color: #fff;">革命的体験</span>
-                </h1>
-                <p>
-                    <span style="color: #00FF88; font-weight: 600;">開封率95%超</span>、<span style="color: #00FF88; font-weight: 600;">リピート率5倍</span>を実現<br>
-                    AIと人間の融合で、あなたのビジネスを<br>
-                    <span class="text-gradient" style="font-weight: 700;">次のステージ</span>へ
-                </p>
-                <div style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
-                    <a href="#contact" class="cta-button">🎯 無料戦略セッション予約</a>
-                    <a href="#solutions" style="color: #fff; text-decoration: none; padding: 12px 30px; border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 50px; backdrop-filter: blur(10px); transition: all 0.3s ease; font-weight: 600;" onmouseover="this.style.borderColor='rgba(6, 199, 85, 0.5)'; this.style.background='rgba(6, 199, 85, 0.1)'" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.2)'; this.style.background='transparent'">📊 成功事例を見る</a>
+            <div class="header-content">
+                <h1 class="main-title">「楽しい」が一番強い。<br>仲間と共に、最高の瞬間を目指さないか？</h1>
+                <p class="sub-title">西尾市一色町を拠点に全国を目指す中学軟式野球クラブ。<br>野球技術はもちろん、人としての成長を全力でサポートします。</p>
+                <div class="cta-buttons">
+                    <a href="https://lin.ee/dUQ9cjs" class="btn btn-primary" target="_blank">LINEで体験練習を申し込む</a>
+                    <a href="https://lin.ee/dUQ9cjs" class="btn btn-secondary" target="_blank">LINEで気軽に質問・見学予約</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="section vision-section">
+        <div class="container">
+            <h2 class="section-title">なぜ、私たちは「楽しむこと」と「勝利」の両方を追求するのか。</h2>
+            <div class="vision-content">
+                <p>野球が好きだから、もっと上手くなりたい。<br>
+                仲間と一緒に、もっと強くなりたい。<br>
+                そして、最高の舞台で思い切り戦いたい。</p>
+                
+                <p class="highlight">一色SKクラブは、そんな純粋な気持ちを大切にしています。</p>
+                
+                <p>私たちの理念は「笑顔で野球に挑戦し、楽しみながら共に成長すること」。<br>
+                厳しい練習でも、仲間がいるから頑張れる。<br>
+                困難な場面でも、チーム一丸となって乗り越えられる。</p>
+                
+                <p>野球を通じて、技術だけでなく、礼儀や感謝の心、そして仲間を思いやる優しさを育みます。</p>
+                
+                <p class="highlight">楽しいから本気になれる。本気だから成長できる。</p>
+                <p>それが、私たちの目指す野球です。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section reasons-section">
+        <div class="container">
+            <h2 class="section-title">一色SKクラブが選ばれる3つの理由</h2>
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <div class="reason-number">1</div>
+                    <h3 class="reason-title">確かな実績が、君の成長を加速させる</h3>
+                    <p class="reason-text">
+                        <strong>オールジャパンベースボールリーグ全国大会準優勝</strong><br><br>
+                        全国という大舞台で戦い抜いた経験と実績があります。この実績は、一朝一夕では築けない、選手たちの努力と指導者の情熱の結晶です。君もこの伝統を受け継ぎ、さらに高みを目指しませんか？
+                    </p>
+                </div>
+                
+                <div class="reason-card">
+                    <div class="reason-number">2</div>
+                    <h3 class="reason-title">君の個性が、チームの力になる</h3>
+                    <p class="reason-text">
+                        <strong>一人ひとりと向き合う指導体制</strong><br><br>
+                        同じ選手は一人もいません。経験豊富な指導者が、君の個性や才能を見極め、長期的な視点で成長をサポートします。苦手なことは基礎から丁寧に、得意なことはさらに伸ばしていく。君だけの成長プランで、野球の楽しさを最大限に味わえます。
+                    </p>
+                </div>
+                
+                <div class="reason-card">
+                    <div class="reason-number">3</div>
+                    <h3 class="reason-title">地域に支えられ、思い切り野球に集中できる</h3>
+                    <p class="reason-text">
+                        <strong>野球に打ち込める充実した環境</strong><br><br>
+                        専用グラウンドでの練習環境、地域企業や地域の皆様からの温かいサポート。君が安心して野球に集中できる環境が整っています。保護者の皆様にも安心していただけるよう、透明性を持った運営を心がけています。
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
+    <section class="section parents-section">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">95%</div>
-                    <div class="stat-label">メッセージ開封率</div>
+            <h2 class="section-title">保護者の皆様へ</h2>
+            <div class="parents-content">
+                <h3 class="section-subtitle">大切なお子様の成長を、私たちにお任せください。</h3>
+                
+                <p>野球を通じて育むのは、技術だけではありません。<br>
+                挨拶、礼儀、仲間を思いやる心、困難に立ち向かう強さ。<br>
+                これらは社会で生きる上で必要不可欠な力です。</p>
+                
+                <p class="highlight">私たちは、お子様の人間的な成長を第一に考えています。</p>
+                
+                <div class="fee-info">
+                    <ul class="fee-list">
+                        <li>月会費：5,000円（兄弟割引あり）</li>
+                        <li>入会金：5,000円</li>
+                        <li>活動日：毎週土・日曜日</li>
+                    </ul>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">5倍</div>
-                    <div class="stat-label">リピート率向上</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">24h</div>
-                    <div class="stat-label">AI自動運用</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">300%</div>
-                    <div class="stat-label">売上成長率</div>
-                </div>
+                
+                <p>費用面でも、できるだけ負担を軽減できるよう配慮しています。<br>
+                保護者の皆様には、お子様の成長を一緒に見守っていただければと思います。</p>
             </div>
         </div>
     </section>
 
-    <!-- Problems Section -->
-    <section class="problems">
+    <section class="section line-section">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 24px;">
-                <span style="display: inline-block; padding: 10px 24px; background: rgba(255, 71, 87, 0.2); border: 1px solid rgba(255, 71, 87, 0.3); border-radius: 25px; font-size: 14px; font-weight: 600; color: #FF6B7A; backdrop-filter: blur(10px);">
-                    ⚠️ 多くの企業が直面する現実
-                </span>
-            </div>
-            <h2 class="section-title">
-                <span style="color: #fff;">もう</span>
-                <span class="text-gradient">悩まない</span>
-                <span style="color: #fff;">でください</span>
-            </h2>
-            <p class="section-subtitle">これらの問題、すべて解決できます</p>
+            <h2 class="section-title">【NEW】LINE公式アカウントで最新情報をGET！</h2>
+            <h3 class="section-subtitle">チームの「今」がわかる！公式LINEを友だち追加しよう！</h3>
             
-            <div class="problems-grid">
-                <div class="problem-card">
-                    <div class="problem-icon">💔</div>
-                    <h3 class="problem-title">友だちは増えたのに売上につながらない</h3>
-                    <p class="problem-text">せっかく登録してもらっても、配信しても反応がない...平均開封率15%以下という現実</p>
+            <p>「まずは情報収集から始めたい」「気軽に質問してみたい」<br>
+            そんな方は、ぜひ公式LINEにご登録ください！</p>
+            
+            <p>練習日程の変更や試合結果の速報、練習風景の動画など、チームのリアルな情報をお届けします。</p>
+            
+            <div class="line-benefits">
+                <div class="line-benefit">
+                    <div class="line-benefit-icon">📅</div>
+                    <p>体験練習や見学の予約がLINEで完結！</p>
                 </div>
-                <div class="problem-card">
-                    <div class="problem-icon">😰</div>
-                    <h3 class="problem-title">何を配信すればいいか分からない</h3>
-                    <p class="problem-text">シナリオ設計やコンテンツ作成に週20時間以上を浪費。本業に集中できない</p>
+                <div class="line-benefit">
+                    <div class="line-benefit-icon">⚾</div>
+                    <p>練習日程や試合結果をいち早く配信！</p>
                 </div>
-                <div class="problem-card">
-                    <div class="problem-icon">🔧</div>
-                    <h3 class="problem-title">機能が多すぎて使いこなせない</h3>
-                    <p class="problem-text">リッチメニューやチャットボット設定が複雑。機能活用率30%以下でもったいない</p>
+                <div class="line-benefit">
+                    <div class="line-benefit-icon">💬</div>
+                    <p>入団に関する質問も気軽にチャットで相談OK！</p>
                 </div>
+                <div class="line-benefit">
+                    <div class="line-benefit-icon">📸</div>
+                    <p>チームの雰囲気がわかる写真・動画を配信！</p>
+                </div>
+            </div>
+            
+            <div class="qr-code">
+                <p style="color: #333; margin-bottom: 15px; font-weight: 600;">友だち追加はこちら</p>
+                <a href="https://lin.ee/dUQ9cjs" class="btn btn-primary" target="_blank">LINE公式アカウントを友だち追加</a>
             </div>
         </div>
     </section>
 
-    <!-- Solutions Section -->
-    <section class="solutions" id="solutions">
+    <section class="section activity-section">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 24px;">
-                <span style="display: inline-block; padding: 10px 24px; background: rgba(6, 199, 85, 0.2); border: 1px solid rgba(6, 199, 85, 0.3); border-radius: 25px; font-size: 14px; font-weight: 600; color: #00FF88; backdrop-filter: blur(10px);">
-                    🎯 革新的ソリューション
-                </span>
-            </div>
-            <h2 class="section-title">
-                <span style="color: #fff;">AIが作る</span><br>
-                <span class="text-gradient">未来のLINE</span>
-            </h2>
-            <p class="section-subtitle">まるで専属マーケティングチームが24時間働いているかのような体験</p>
-            
-            <div class="solutions-grid">
-                <div class="solution-card">
-                    <div class="solution-icon">🤖</div>
-                    <h3 class="solution-title">AI構築・初期設定</h3>
-                    <p class="solution-text">プロフィールから基本設定まで、AIが最適化して自動構築。人的ミスを排除し、効率的なセットアップを実現。</p>
-                    <div class="solution-benefit">✨ 設定時間: 従来の1/10</div>
+            <h2 class="section-title">活動概要・募集要項</h2>
+            <div class="activity-grid">
+                <div class="activity-item">
+                    <div class="activity-label">募集対象</div>
+                    <div class="activity-value">野球経験のある<br>新中学1年生〜3年生</div>
                 </div>
-                <div class="solution-card">
-                    <div class="solution-icon">🧠</div>
-                    <h3 class="solution-title">心理学ベースシナリオ</h3>
-                    <p class="solution-text">顧客心理を分析し、購買行動を促進するシナリオを自動生成。データドリブンなアプローチで成果を最大化。</p>
-                    <div class="solution-benefit">🎯 コンバージョン率: 3倍向上</div>
+                <div class="activity-item">
+                    <div class="activity-label">活動場所</div>
+                    <div class="activity-value">西尾市一色町<br>坂田新田沖84</div>
                 </div>
-                <div class="solution-card">
-                    <div class="solution-icon">💬</div>
-                    <h3 class="solution-title">次世代AIチャットボット</h3>
-                    <p class="solution-text">GPT-4を活用した自然な対話で、24時間365日の接客を実現。顧客満足度向上と業務効率化を同時に達成。</p>
-                    <div class="solution-benefit">⚡ 応答速度: 0.3秒以内</div>
+                <div class="activity-item">
+                    <div class="activity-label">活動日時</div>
+                    <div class="activity-value">毎週土・日曜日<br>（詳細はLINEにて）</div>
                 </div>
-                <div class="solution-card">
-                    <div class="solution-icon">🎯</div>
-                    <h3 class="solution-title">動的セグメンテーション</h3>
-                    <p class="solution-text">AIが顧客行動を分析し、リアルタイムでセグメントを自動更新。パーソナライズされたメッセージで高い効果を実現。</p>
-                    <div class="solution-benefit">📊 精度: 95%以上</div>
+                <div class="activity-item">
+                    <div class="activity-label">入会金</div>
+                    <div class="activity-value">5,000円</div>
                 </div>
-                <div class="solution-card">
-                    <div class="solution-icon">🎨</div>
-                    <h3 class="solution-title">AIデザイン生成</h3>
-                    <p class="solution-text">リッチメニューやカードメッセージをAIが自動デザイン。ブランドに合わせた美しいビジュアルを瞬時に生成。</p>
-                    <div class="solution-benefit">🎨 生成時間: 5分以内</div>
-                </div>
-                <div class="solution-card">
-                    <div class="solution-icon">📊</div>
-                    <h3 class="solution-title">リアルタイム分析</h3>
-                    <p class="solution-text">AIが24時間データを分析し、即座に改善提案を実行。継続的な最適化で長期的な成長を支援。</p>
-                    <div class="solution-benefit">⚡ 改善提案: 毎時更新</div>
+                <div class="activity-item">
+                    <div class="activity-label">月会費</div>
+                    <div class="activity-value">5,000円<br>（兄弟割引あり）</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section" id="contact">
+    <section class="section faq-section">
         <div class="container">
-            <h2>今すぐ始めて、売上を爆発的に成長させませんか？</h2>
-            <p>無料戦略セッションで、あなたのビジネスに最適な次世代LINE活用法をご提案します</p>
+            <h2 class="section-title">よくある質問</h2>
             
-            <form class="cta-form" id="contactForm">
-                <div class="form-row">
-                    <input type="text" class="form-input" placeholder="お名前" required>
-                    <input type="email" class="form-input" placeholder="メールアドレス" required>
+            <div class="faq-item">
+                <div class="faq-question">Q1. 野球の経験が浅くても入れますか？</div>
+                <div class="faq-answer">
+                    <strong>A1.</strong> はい、大丈夫です。経験豊富な指導者が、一人ひとりのレベルに合わせて丁寧に指導いたします。大切なのは「野球を楽しみたい」という気持ちです。
                 </div>
-                <input type="tel" class="form-input" placeholder="電話番号">
-                <textarea class="form-textarea" placeholder="ご相談内容・現在の課題をお聞かせください（任意）"></textarea>
-                <button type="submit" class="submit-button">🚀 無料戦略セッションを予約する</button>
-            </form>
+            </div>
             
-            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
-                ※ 24時間以内にご連絡いたします　※ 無理な営業は一切いたしません
-            </p>
+            <div class="faq-item">
+                <div class="faq-question">Q2. 練習の見学や体験はいつでも可能ですか？</div>
+                <div class="faq-answer">
+                    <strong>A2.</strong> はい、いつでも歓迎します。事前にLINEまたはお電話でご連絡いただければ、練習日程をお伝えします。
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q3. 保護者の当番などはありますか？</div>
+                <div class="faq-answer">
+                    <strong>A3.</strong> 必要最小限に抑えています。お仕事やご家庭の事情を考慮し、無理のない範囲でのご協力をお願いしています。
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q4. 詳しい資料はいただけますか？</div>
+                <div class="faq-answer">
+                    <strong>A4.</strong> はい、公式LINEにご登録いただければ、チャットにて詳細資料（PDF）をお送りすることも可能です。お気軽にお申し付けください。
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q5. チームの雰囲気について教えてください。</div>
+                <div class="faq-answer">
+                    <strong>A5.</strong> 「楽しく、真剣に」をモットーに、選手同士の仲が良く、お互いを高め合える環境です。見学にお越しいただければ、実際の雰囲気を感じていただけます。
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section class="section closing-section">
+        <div class="container">
+            <div class="closing-content">
+                <h2 class="section-title">さあ、最高の仲間と、最高の舞台へ。</h2>
+                <div class="closing-message">
+                    <p><strong>不安なこと、気になることは何でもご相談ください。</strong></p>
+                    
+                    <p>まずは一度、グラウンドの雰囲気を体験しに来ませんか？<br>
+                    電話やメールはもちろん、LINEでお気軽にご連絡いただいても構いません。</p>
+                    
+                    <p><strong>君の挑戦を、チーム一同、心から待っています。</strong></p>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a href="https://lin.ee/dUQ9cjs" class="btn btn-primary" target="_blank">LINEで体験練習を申し込む</a>
+                    <a href="https://lin.ee/dUQ9cjs" class="btn btn-secondary" target="_blank">LINEで気軽に問い合わせる</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>🎯 サービス</h3>
-                    <ul>
-                        <li>AI構築・初期設定</li>
-                        <li>心理学ベースシナリオ</li>
-                        <li>次世代AIチャットボット</li>
-                        <li>動的セグメンテーション</li>
-                        <li>AIデザイン生成</li>
-                        <li>リアルタイム分析</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>🔗 会社情報</h3>
-                    <ul>
-                        <li>会社概要</li>
-                        <li>成功事例</li>
-                        <li>料金プラン</li>
-                        <li>お問い合わせ</li>
-                        <li>プライバシーポリシー</li>
-                        <li>利用規約</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>📞 お問い合わせ</h3>
-                    <ul>
-                        <li>無料戦略セッション</li>
-                        <li>技術サポート</li>
-                        <li>導入相談</li>
-                        <li>メディア掲載</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 次世代AI × LINE構築サービス. All rights reserved.</p>
-            </div>
+            <p>&copy; 2025 一色SKクラブ All Rights Reserved.</p>
+            <p>西尾市一色町坂田新田沖84</p>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for anchor links
+        // FAQ アコーディオン機能
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const questionSymbol = question.querySelector('.faq-symbol');
+                const isOpen = answer.style.maxHeight;
+
+                // 他の回答を閉じる
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    if (ans !== answer) {
+                        ans.style.maxHeight = null;
+                        const otherQuestion = ans.previousElementSibling;
+                        otherQuestion.classList.remove('open');
+                    }
+                });
+                
+                // クリックされた質問の開閉
+                if (isOpen) {
+                    answer.style.maxHeight = null;
+                    question.classList.remove('open');
+                } else {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                    question.classList.add('open');
+                }
+            });
+        });
+        
+        // スムーススクロール（外部リンクを除外）
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                        behavior: 'smooth'
                     });
                 }
             });
-        });
-
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('お問い合わせありがとうございます！24時間以内にご連絡いたします。');
-        });
-
-        // Add scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'slideUp 0.8s ease-out forwards';
-                }
-            });
-        }, observerOptions);
-
-        // Observe sections for animation
-        document.querySelectorAll('.stat-item, .problem-card, .solution-card').forEach(el => {
-            observer.observe(el);
         });
     </script>
 </body>
