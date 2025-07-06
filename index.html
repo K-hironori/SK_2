@@ -350,6 +350,10 @@
             line-height: 1.7;
         }
         
+        .faq-answer.active {
+            padding: 20px;
+        }
+        
         /* クロージングセクション */
         .closing-section {
             background: linear-gradient(135deg, #2c3e50, #34495e);
@@ -701,18 +705,22 @@
                 document.querySelectorAll('.faq-question.active').forEach(activeQuestion => {
                     if (activeQuestion !== question) {
                         activeQuestion.classList.remove('active');
-                        activeQuestion.nextElementSibling.style.maxHeight = null;
+                        const activeAnswer = activeQuestion.nextElementSibling;
+                        activeAnswer.classList.remove('active');
+                        activeAnswer.style.maxHeight = null;
                     }
                 });
 
                 // クリックされた項目を開閉する
                 if (isActive) {
                     question.classList.remove('active');
+                    answer.classList.remove('active');
                     answer.style.maxHeight = null;
                 } else {
                     question.classList.add('active');
+                    answer.classList.add('active');
                     // scrollHeightを使って、コンテンツに合わせた高さを動的に設定
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    answer.style.maxHeight = answer.scrollHeight + 40 + 'px'; // パディングを考慮
                 }
             });
         });
