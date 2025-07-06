@@ -29,10 +29,10 @@
         .header {
             /* フォールバック背景としてグラデーションを保持 */
             background: linear-gradient(135deg, #1e3c72, #2a5298);
-            /* 背景画像を追加（実際のファイルに置き換えてください） */
+            /* アップロードされた野球場の背景画像を使用 */
             background-image: 
-                linear-gradient(rgba(30, 60, 114, 0.8), rgba(42, 82, 152, 0.8)),
-                url('https://images.unsplash.com/photo-1566577739112-5180d4bf9390?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+                linear-gradient(rgba(30, 60, 114, 0.7), rgba(42, 82, 152, 0.7)),
+                url('./baseball-field.jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -46,18 +46,20 @@
             align-items: center;
         }
         
-        /* ロゴオーバーレイ */
+        /* アップロードされたSKクラブロゴオーバーレイ */
         .header::before {
             content: '';
             position: absolute;
-            top: 30px;
+            bottom: 30px;
             right: 30px;
-            width: 120px;
-            height: 120px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%23ffffff" opacity="0.1"/><text x="50" y="35" text-anchor="middle" fill="%23ffffff" font-size="12" font-weight="bold">SK</text><text x="50" y="50" text-anchor="middle" fill="%23ffffff" font-size="8">CLUB</text><text x="50" y="65" text-anchor="middle" fill="%23ffffff" font-size="6">一色</text></svg>') no-repeat center;
+            width: 150px;
+            height: 150px;
+            background: url('./sk-logo.jpeg') no-repeat center;
             background-size: contain;
-            opacity: 0.3;
+            opacity: 0.7;
             z-index: 1;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
         
         /* ダイナミックなオーバーレイ効果 */
@@ -438,11 +440,12 @@
             }
             
             .header::before {
-                top: 20px;
+                bottom: 20px;
                 right: 20px;
-                width: 80px;
-                height: 80px;
-                opacity: 0.4;
+                width: 100px;
+                height: 100px;
+                opacity: 0.6;
+                border-radius: 10px;
             }
             
             .main-title {
