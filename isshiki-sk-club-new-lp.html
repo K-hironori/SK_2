@@ -380,6 +380,17 @@
             padding: 40px 0;
         }
         
+        /* モバイル表示でのレスポンシブ改行調整 */
+        .br-desktop-only {
+            display: inline;
+        }
+        
+        @media (max-width: 768px) {
+            .br-desktop-only {
+                display: none;
+            }
+        }
+        
         /* レスポンシブ */
         @media (max-width: 768px) {
             .main-title {
@@ -420,8 +431,8 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <h1 class="main-title">「楽しい」が一番強い。<br>仲間と共に、最高の瞬間を目指さないか？</h1>
-                <p class="sub-title">西尾市一色町を拠点に全国を目指す中学軟式野球クラブ。<br>野球技術はもちろん、人としての成長を全力でサポートします。</p>
+                <h1 class="main-title">「楽しい」が一番強い。<br class="br-desktop-only">仲間と共に、最高の瞬間を目指さないか？</h1>
+                <p class="sub-title">西尾市一色町を拠点に全国を目指す中学軟式野球クラブ。<br class="br-desktop-only">野球技術はもちろん、人としての成長を全力でサポートします。</p>
                 <div class="cta-buttons">
                     <a href="https://lin.ee/dUQ9cjs" class="btn btn-primary" target="_blank">LINE公式アカウントを友だち追加</a>
                 </div>
@@ -433,15 +444,11 @@
         <div class="container">
             <h2 class="section-title">なぜ、私たちは「楽しむこと」と「勝利」の両方を追求するのか。</h2>
             <div class="vision-content">
-                <p>野球が好きだから、もっと上手くなりたい。<br>
-                仲間と一緒に、もっと強くなりたい。<br>
-                そして、最高の舞台で思い切り戦いたい。</p>
+                <p>野球が好きだから、もっと上手くなりたい。仲間と一緒に、もっと強くなりたい。そして、最高の舞台で思い切り戦いたい。</p>
                 
                 <p class="highlight">一色SKクラブは、そんな純粋な気持ちを大切にしています。</p>
                 
-                <p>私たちの理念は「笑顔で野球に挑戦し、楽しみながら共に成長すること」。<br>
-                厳しい練習でも、仲間がいるから頑張れる。<br>
-                困難な場面でも、チーム一丸となって乗り越えられる。</p>
+                <p>私たちの理念は「笑顔で野球に挑戦し、楽しみながら共に成長すること」。厳しい練習でも、仲間がいるから頑張れる。困難な場面でも、チーム一丸となって乗り越えられる。</p>
                 
                 <p>野球を通じて、技術だけでなく、礼儀や感謝の心、そして仲間を思いやる優しさを育みます。</p>
                 
@@ -459,9 +466,9 @@
                     <div class="reason-number">1</div>
                     <h3 class="reason-title">確かな実績が、君の成長を加速させる</h3>
                     <p class="reason-text">
-                        <strong>【主な実績】</strong><br>
-                        <strong>・2022年 オールジャパンベースボールリーグ 全国大会 優勝</strong><br>
-                        <strong>・2024年 オールジャパンベースボールリーグ 全国大会 準優勝</strong><br><br>
+                        <strong>【主な実績】</strong><br class="br-desktop-only">
+                        <strong>・2022年 オールジャパンベースボールリーグ 全国大会 優勝</strong><br class="br-desktop-only">
+                        <strong>・2024年 オールジャパンベースボールリーグ 全国大会 準優勝</strong><br class="br-desktop-only"><br class="br-desktop-only">
                         全国の頂点に立った経験、そして常に全国のトップで戦い続ける実績があります。この結果は、選手一人ひとりの「勝ちたい」という強い意志と、指導者の情熱が生み出したものです。次は君が、この常勝チームの一員として、最高の瞬間を掴む番だ。
                     </p>
                 </div>
@@ -470,7 +477,7 @@
                     <div class="reason-number">2</div>
                     <h3 class="reason-title">君の個性が、チームの力になる</h3>
                     <p class="reason-text">
-                        <strong>一人ひとりと向き合う指導体制</strong><br><br>
+                        <strong>一人ひとりと向き合う指導体制</strong><br class="br-desktop-only"><br class="br-desktop-only">
                         同じ選手は一人もいません。経験豊富な指導者が、君の個性や才能を見極め、長期的な視点で成長をサポートします。苦手なことは基礎から丁寧に、得意なことはさらに伸ばしていく。君だけの成長プランで、野球の楽しさを最大限に味わえます。
                     </p>
                 </div>
@@ -479,7 +486,7 @@
                     <div class="reason-number">3</div>
                     <h3 class="reason-title">地域に支えられ、思い切り野球に集中できる</h3>
                     <p class="reason-text">
-                        <strong>野球に打ち込める充実した環境</strong><br><br>
+                        <strong>野球に打ち込める充実した環境</strong><br class="br-desktop-only"><br class="br-desktop-only">
                         専用グラウンドでの練習環境、地域企業や地域の皆様からの温かいサポート。君が安心して野球に集中できる環境が整っています。保護者の皆様にも安心していただけるよう、透明性を持った運営を心がけています。
                     </p>
                 </div>
@@ -493,9 +500,7 @@
             <div class="parents-content">
                 <h3 class="section-subtitle">大切なお子様の成長を、私たちにお任せください。</h3>
                 
-                <p>野球を通じて育むのは、技術だけではありません。<br>
-                挨拶、礼儀、仲間を思いやる心、困難に立ち向かう強さ。<br>
-                これらは社会で生きる上で必要不可欠な力です。</p>
+                <p>野球を通じて育むのは、技術だけではありません。挨拶、礼儀、仲間を思いやる心、困難に立ち向かう強さ。これらは社会で生きる上で必要不可欠な力です。</p>
                 
                 <p class="highlight">私たちは、お子様の人間的な成長を第一に考えています。</p>
                 
@@ -507,8 +512,7 @@
                     </ul>
                 </div>
                 
-                <p>費用面でも、できるだけ負担を軽減できるよう配慮しています。<br>
-                保護者の皆様には、お子様の成長を一緒に見守っていただければと思います。</p>
+                <p>費用面でも、できるだけ負担を軽減できるよう配慮しています。保護者の皆様には、お子様の成長を一緒に見守っていただければと思います。</p>
             </div>
         </div>
     </section>
@@ -518,27 +522,26 @@
             <h2 class="section-title">【NEW】LINE公式アカウントで最新情報をGET！</h2>
             <h3 class="section-subtitle">チームの「今」がわかる！公式LINEを友だち追加しよう！</h3>
             
-            <p>「まずは情報収集から始めたい」「気軽に質問してみたい」<br>
-            そんな方は、ぜひ公式LINEにご登録ください！</p>
+            <p>「まずは情報収集から始めたい」「気軽に質問してみたい」そんな方は、ぜひ公式LINEにご登録ください！</p>
             
             <p>練習日程の変更や試合結果の速報、練習風景の動画など、チームのリアルな情報をお届けします。</p>
             
             <div class="line-benefits">
                 <div class="line-benefit">
                     <div class="line-benefit-icon">✍️</div>
-                    <p>タップ一つで簡単！<br>体験練習の申し込み</p>
+                    <p>タップ一つで簡単！<br class="br-desktop-only">体験練習の申し込み</p>
                 </div>
                 <div class="line-benefit">
                     <div class="line-benefit-icon">🎓</div>
-                    <p>【必見】強豪校で活躍！<br>OBの進路先を公開</p>
+                    <p>【必見】強豪校で活躍！<br class="br-desktop-only">OBの進路先を公開</p>
                 </div>
                 <div class="line-benefit">
                     <div class="line-benefit-icon">🗓️</div>
-                    <p>入団後のイメージが湧く！<br>年間スケジュールを確認</p>
+                    <p>入団後のイメージが湧く！<br class="br-desktop-only">年間スケジュールを確認</p>
                 </div>
                 <div class="line-benefit">
                     <div class="line-benefit-icon">ℹ️</div>
-                    <p>クラブ紹介やSNS、<br>よくある質問もすぐに解決</p>
+                    <p>クラブ紹介やSNS、<br class="br-desktop-only">よくある質問もすぐに解決</p>
                 </div>
             </div>
             
@@ -647,10 +650,9 @@
                 <div class="closing-message">
                     <p><strong>不安なこと、気になることは何でもご相談ください。</strong></p>
                     
-                    <p>まずは一度、グラウンドの雰囲気を体験しに来ませんか？<br>
-                    ご質問や体験練習のお申し込みは、公式LINEで一括して受け付けております。</p>
+                    <p>まずは一度、グラウンドの雰囲気を体験しに来ませんか？ご質問や体験練習のお申し込みは、公式LINEで一括して受け付けております。</p>
                     
-                    <p><strong>まずは下のボタンから友だち追加をお願いします。<br>君の挑戦を、チーム一同、心から待っています。</strong></p>
+                    <p><strong>まずは下のボタンから友だち追加をお願いします。<br class="br-desktop-only">君の挑戦を、チーム一同、心から待っています。</strong></p>
                 </div>
                 
                 <div class="cta-buttons">
