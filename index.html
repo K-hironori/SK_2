@@ -304,24 +304,49 @@
         }
         
         .faq-question {
-            background: #3498db;
-            color: white;
+            background: white;
+            color: #2c3e50;
             padding: 20px;
             font-weight: 600;
             cursor: pointer;
             position: relative;
+            border: 1px solid #eee;
+            border-radius: 10px 10px 0 0;
+            margin-top: -1px;
         }
         
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+
         .faq-question::after {
             content: '+';
             position: absolute;
             right: 20px;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 300;
             transition: transform 0.3s ease;
+        }
+
+        .faq-question.active {
+             border-bottom-left-radius: 0;
+             border-bottom-right-radius: 0;
+        }
+
+        .faq-question.active::after {
+            transform: rotate(45deg);
         }
         
         .faq-answer {
-            padding: 20px;
+            background: #f8f9fa;
+            color: #333;
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            padding: 0 20px;
+            border: 1px solid #eee;
+            border-top: none;
+            border-radius: 0 0 10px 10px;
             line-height: 1.7;
         }
         
@@ -666,29 +691,28 @@
     </footer>
 
     <script>
-        // FAQ アコーディオン機能
+        // FAQ アコーディオン機能（高機能版）
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
-                const questionSymbol = question.querySelector('.faq-symbol');
-                const isOpen = answer.style.maxHeight;
+                const isActive = question.classList.contains('active');
 
-                // 他の回答を閉じる
-                document.querySelectorAll('.faq-answer').forEach(ans => {
-                    if (ans !== answer) {
-                        ans.style.maxHeight = null;
-                        const otherQuestion = ans.previousElementSibling;
-                        otherQuestion.classList.remove('open');
+                // まず、すべてのアクティブな項目を閉じる
+                document.querySelectorAll('.faq-question.active').forEach(activeQuestion => {
+                    if (activeQuestion !== question) {
+                        activeQuestion.classList.remove('active');
+                        activeQuestion.nextElementSibling.style.maxHeight = null;
                     }
                 });
-                
-                // クリックされた質問の開閉
-                if (isOpen) {
+
+                // クリックされた項目を開閉する
+                if (isActive) {
+                    question.classList.remove('active');
                     answer.style.maxHeight = null;
-                    question.classList.remove('open');
                 } else {
-                    answer.style.maxHeight = answer.scrollHeight + "px";
-                    question.classList.add('open');
+                    question.classList.add('active');
+                    // scrollHeightを使って、コンテンツに合わせた高さを動的に設定
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
                 }
             });
         });
