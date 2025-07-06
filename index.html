@@ -158,6 +158,83 @@
             color: #34495e;
         }
         
+        /* 最新試合結果セクション */
+        .latest-results-section {
+            padding: 80px 0;
+        }
+        
+        .results-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .result-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            padding: 25px;
+            text-align: center;
+            border-left: 8px solid #ccc;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .result-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        
+        .result-card.win {
+            border-left-color: #ff6b6b;
+        }
+        
+        .result-card.loss {
+            border-left-color: #747d8c;
+        }
+        
+        .result-header {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .result-body {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-bottom: 15px;
+        }
+        
+        .result-team {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .result-score {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 0 15px;
+        }
+        
+        .result-footer .result-outcome {
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+        
+        .result-card.win .result-outcome {
+            color: #ff6b6b;
+        }
+        
+        .result-card.loss .result-outcome {
+            color: #747d8c;
+        }
+        
         /* 理念セクション */
         .vision-section {
             background: white;
@@ -471,6 +548,31 @@
                 font-size: 1.8rem;
             }
             
+            .results-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .result-card {
+                padding: 20px;
+            }
+            
+            .result-header {
+                flex-direction: column;
+                gap: 5px;
+                align-items: center;
+            }
+            
+            .result-body {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .result-score {
+                font-size: 1.5rem;
+                margin: 10px 0;
+            }
+            
             .reasons-grid {
                 grid-template-columns: 1fr;
             }
@@ -501,6 +603,44 @@
             </div>
         </div>
     </header>
+
+    <section class="section latest-results-section" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">最新試合結果</h2>
+            <div class="results-container">
+                <div class="result-card win">
+                    <div class="result-header">
+                        <span class="result-date">2025年7月5日(土)</span>
+                        <span class="result-tournament">夏季リーグ 第3戦</span>
+                    </div>
+                    <div class="result-body">
+                        <span class="result-team">一色SKクラブ</span>
+                        <span class="result-score">5 - 2</span>
+                        <span class="result-team">vs 西尾クラブ</span>
+                    </div>
+                    <div class="result-footer">
+                        <span class="result-outcome">WIN</span>
+                    </div>
+                </div>
+                
+                <div class="result-card loss">
+                    <div class="result-header">
+                        <span class="result-date">2025年6月28日(土)</span>
+                        <span class="result-tournament">夏季リーグ 第2戦</span>
+                    </div>
+                    <div class="result-body">
+                        <span class="result-team">一色SKクラブ</span>
+                        <span class="result-score">3 - 4</span>
+                        <span class="result-team">vs 岡崎クラブ</span>
+                    </div>
+                    <div class="result-footer">
+                        <span class="result-outcome">LOSE</span>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 30px;">※試合結果は随時更新します。</p>
+        </div>
+    </section>
 
     <section class="section vision-section">
         <div class="container">
