@@ -5,12 +5,30 @@
     {
       "src": "*.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "*.jpeg",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.jpg",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.png",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/",
       "dest": "/index.html"
+    },
+    {
+      "src": "/(.*\\.(jpeg|jpg|png|gif|svg|webp))",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
     }
   ]
 }
