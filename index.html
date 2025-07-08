@@ -490,6 +490,110 @@
             margin-bottom: 40px;
         }
         
+        /* キャッチボールアニメーション */
+        .catchball-animation {
+            margin-top: 40px;
+            position: relative;
+            height: 150px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .baseball-field {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: linear-gradient(to right, #8FBC8F, #90EE90);
+            border-radius: 20px;
+        }
+        
+        .player {
+            position: absolute;
+            bottom: 40px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .player-left {
+            left: 20%;
+            animation: throw-left 3s ease-in-out infinite;
+        }
+        
+        .player-right {
+            right: 20%;
+            animation: throw-right 3s ease-in-out infinite 1.5s;
+        }
+        
+        .baseball {
+            position: absolute;
+            bottom: 70px;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            animation: ball-flight 3s ease-in-out infinite;
+        }
+        
+        .baseball::before {
+            content: '⚾';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 16px;
+        }
+        
+        @keyframes throw-left {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(-10deg) scale(1.1); }
+            50% { transform: rotate(0deg) scale(1); }
+        }
+        
+        @keyframes throw-right {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(10deg) scale(1.1); }
+            50% { transform: rotate(0deg) scale(1); }
+        }
+        
+        @keyframes ball-flight {
+            0% {
+                left: 25%;
+                bottom: 70px;
+                opacity: 1;
+            }
+            25% {
+                left: 50%;
+                bottom: 120px;
+                opacity: 1;
+            }
+            50% {
+                left: 75%;
+                bottom: 70px;
+                opacity: 1;
+            }
+            75% {
+                left: 50%;
+                bottom: 120px;
+                opacity: 1;
+            }
+            100% {
+                left: 25%;
+                bottom: 70px;
+                opacity: 1;
+            }
+        }
+        
         /* フッター */
         .footer {
             background: #2c3e50;
@@ -607,7 +711,7 @@
                 min-width: 100%;
             }
         }
-    </style>
+            \n            .catchball-animation {\n                height: 120px;\n                margin-top: 30px;\n            }\n            \n            .player {\n                width: 50px;\n                height: 50px;\n                font-size: 2rem;\n            }\n            \n            .baseball {\n                width: 16px;\n                height: 16px;\n                bottom: 60px;\n            }\n            \n            .baseball::before {\n                font-size: 14px;\n            }\n        }\n    </style>
 </head>
 <body>
     <header class="header">
@@ -617,6 +721,13 @@
                 <p class="sub-title">西尾市一色町を拠点に全国を目指す中学軟式野球クラブ。<br class="br-desktop-only">野球技術はもちろん、人としての成長を全力でサポートします。</p>
                 <div class="cta-buttons">
                     <a href="https://lin.ee/AEYKBvs" class="btn btn-primary" target="_blank">LINE公式アカウントを友だち追加</a>
+                </div>
+                
+                <div class="catchball-animation">
+                    <div class="baseball-field"></div>
+                    <div class="player player-left">🧒</div>
+                    <div class="player player-right">👦</div>
+                    <div class="baseball"></div>
                 </div>
             </div>
         </div>
