@@ -490,6 +490,237 @@
             margin-bottom: 40px;
         }
         
+        /* 野球キャッチボールアニメーション */
+        .catchball-animation {
+            margin-top: 40px;
+            position: relative;
+            height: 180px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .baseball-field {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: linear-gradient(to right, #228B22, #32CD32, #228B22);
+            border-radius: 15px;
+        }
+        
+        .baseball-player {
+            position: absolute;
+            bottom: 30px;
+            width: 80px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        
+        .player-left {
+            left: 15%;
+            animation: pitcher-motion 4s ease-in-out infinite;
+        }
+        
+        .player-right {
+            right: 15%;
+            animation: catcher-motion 4s ease-in-out infinite 2s;
+        }
+        
+        .player-body {
+            width: 60px;
+            height: 80px;
+            background: linear-gradient(135deg, #FF6B35, #FF8E53);
+            border-radius: 30px 30px 20px 20px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .player-head {
+            width: 35px;
+            height: 35px;
+            background: #FDBCB4;
+            border-radius: 50%;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 2px solid #E8A598;
+        }
+        
+        .player-cap {
+            width: 40px;
+            height: 20px;
+            background: #1e3c72;
+            border-radius: 20px 20px 5px 5px;
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .player-glove {
+            width: 25px;
+            height: 25px;
+            background: #8B4513;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .player-left .player-glove {
+            right: -15px;
+            animation: throw-glove 4s ease-in-out infinite;
+        }
+        
+        .player-right .player-glove {
+            left: -15px;
+            animation: catch-glove 4s ease-in-out infinite 2s;
+        }
+        
+        .player-legs {
+            width: 45px;
+            height: 35px;
+            background: #2C3E50;
+            border-radius: 0 0 15px 15px;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .baseball {
+            position: absolute;
+            bottom: 90px;
+            width: 18px;
+            height: 18px;
+            background: #FFFFFF;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            animation: baseball-flight 4s ease-in-out infinite;
+            z-index: 10;
+        }
+        
+        .baseball::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 14px;
+            background: #FF0000;
+            border-radius: 1px;
+        }
+        
+        .baseball::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 2px;
+            height: 14px;
+            background: #FF0000;
+            border-radius: 1px;
+        }
+        
+        @keyframes pitcher-motion {
+            0%, 90%, 100% {
+                transform: translateX(0) scale(1);
+            }
+            10% {
+                transform: translateX(-5px) scale(1.05);
+            }
+            20% {
+                transform: translateX(5px) scale(1.1);
+            }
+            30% {
+                transform: translateX(0) scale(1);
+            }
+        }
+        
+        @keyframes catcher-motion {
+            0%, 40%, 100% {
+                transform: translateX(0) scale(1);
+            }
+            50% {
+                transform: translateX(-5px) scale(1.05);
+            }
+            60% {
+                transform: translateX(5px) scale(1.1);
+            }
+            70% {
+                transform: translateX(0) scale(1);
+            }
+        }
+        
+        @keyframes throw-glove {
+            0%, 90%, 100% {
+                transform: translateX(0) translateY(0) rotate(0deg);
+            }
+            10% {
+                transform: translateX(-10px) translateY(-5px) rotate(-20deg);
+            }
+            20% {
+                transform: translateX(10px) translateY(-10px) rotate(20deg);
+            }
+            30% {
+                transform: translateX(0) translateY(0) rotate(0deg);
+            }
+        }
+        
+        @keyframes catch-glove {
+            0%, 40%, 100% {
+                transform: translateX(0) translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateX(10px) translateY(-5px) rotate(20deg);
+            }
+            60% {
+                transform: translateX(-5px) translateY(-10px) rotate(-10deg);
+            }
+            70% {
+                transform: translateX(0) translateY(0) rotate(0deg);
+            }
+        }
+        
+        @keyframes baseball-flight {
+            0% {
+                left: 20%;
+                bottom: 90px;
+                opacity: 1;
+                transform: rotate(0deg) scale(1);
+            }
+            25% {
+                left: 50%;
+                bottom: 150px;
+                opacity: 1;
+                transform: rotate(180deg) scale(0.8);
+            }
+            50% {
+                left: 80%;
+                bottom: 90px;
+                opacity: 1;
+                transform: rotate(360deg) scale(1);
+            }
+            75% {
+                left: 50%;
+                bottom: 150px;
+                opacity: 1;
+                transform: rotate(540deg) scale(0.8);
+            }
+            100% {
+                left: 20%;
+                bottom: 90px;
+                opacity: 1;
+                transform: rotate(720deg) scale(1);
+            }
+        }
         
         /* フッター */
         .footer {
@@ -608,6 +839,56 @@
                 min-width: 100%;
             }
             
+            .catchball-animation {
+                height: 140px;
+                margin-top: 30px;
+            }
+            
+            .baseball-player {
+                width: 60px;
+                height: 90px;
+            }
+            
+            .player-body {
+                width: 45px;
+                height: 60px;
+            }
+            
+            .player-head {
+                width: 25px;
+                height: 25px;
+                top: -10px;
+            }
+            
+            .player-cap {
+                width: 30px;
+                height: 15px;
+                top: -18px;
+            }
+            
+            .player-glove {
+                width: 18px;
+                height: 18px;
+                top: 15px;
+            }
+            
+            .player-legs {
+                width: 35px;
+                height: 25px;
+            }
+            
+            .baseball {
+                width: 14px;
+                height: 14px;
+                bottom: 70px;
+            }
+            
+            .baseball::before,
+            .baseball::after {
+                width: 1.5px;
+                height: 10px;
+                top: 1.5px;
+            }
         }
     </style>
 </head>
@@ -619,6 +900,27 @@
                 <p class="sub-title">西尾市一色町を拠点に全国を目指す中学軟式野球クラブ。<br class="br-desktop-only">野球技術はもちろん、人としての成長を全力でサポートします。</p>
                 <div class="cta-buttons">
                     <a href="https://lin.ee/AEYKBvs" class="btn btn-primary" target="_blank">LINE公式アカウントを友だち追加</a>
+                </div>
+                
+                <div class="catchball-animation">
+                    <div class="baseball-field"></div>
+                    <div class="baseball-player player-left">
+                        <div class="player-body">
+                            <div class="player-head"></div>
+                            <div class="player-cap"></div>
+                            <div class="player-glove"></div>
+                        </div>
+                        <div class="player-legs"></div>
+                    </div>
+                    <div class="baseball-player player-right">
+                        <div class="player-body">
+                            <div class="player-head"></div>
+                            <div class="player-cap"></div>
+                            <div class="player-glove"></div>
+                        </div>
+                        <div class="player-legs"></div>
+                    </div>
+                    <div class="baseball"></div>
                 </div>
             </div>
         </div>
