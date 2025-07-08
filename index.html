@@ -490,11 +490,11 @@
             margin-bottom: 40px;
         }
         
-        /* キャッチボールアニメーション */
+        /* 野球キャッチボールアニメーション */
         .catchball-animation {
             margin-top: 40px;
             position: relative;
-            height: 150px;
+            height: 180px;
             width: 100%;
             overflow: hidden;
         }
@@ -504,93 +504,221 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 40px;
-            background: linear-gradient(to right, #8FBC8F, #90EE90);
-            border-radius: 20px;
+            height: 30px;
+            background: linear-gradient(to right, #228B22, #32CD32, #228B22);
+            border-radius: 15px;
         }
         
-        .player {
+        .baseball-player {
             position: absolute;
-            bottom: 40px;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+            bottom: 30px;
+            width: 80px;
+            height: 120px;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            justify-content: flex-end;
         }
         
         .player-left {
-            left: 20%;
-            animation: throw-left 3s ease-in-out infinite;
+            left: 15%;
+            animation: pitcher-motion 4s ease-in-out infinite;
         }
         
         .player-right {
-            right: 20%;
-            animation: throw-right 3s ease-in-out infinite 1.5s;
+            right: 15%;
+            animation: catcher-motion 4s ease-in-out infinite 2s;
+        }
+        
+        .player-body {
+            width: 60px;
+            height: 80px;
+            background: linear-gradient(135deg, #FF6B35, #FF8E53);
+            border-radius: 30px 30px 20px 20px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .player-head {
+            width: 35px;
+            height: 35px;
+            background: #FDBCB4;
+            border-radius: 50%;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 2px solid #E8A598;
+        }
+        
+        .player-cap {
+            width: 40px;
+            height: 20px;
+            background: #1e3c72;
+            border-radius: 20px 20px 5px 5px;
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .player-glove {
+            width: 25px;
+            height: 25px;
+            background: #8B4513;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .player-left .player-glove {
+            right: -15px;
+            animation: throw-glove 4s ease-in-out infinite;
+        }
+        
+        .player-right .player-glove {
+            left: -15px;
+            animation: catch-glove 4s ease-in-out infinite 2s;
+        }
+        
+        .player-legs {
+            width: 45px;
+            height: 35px;
+            background: #2C3E50;
+            border-radius: 0 0 15px 15px;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
         }
         
         .baseball {
             position: absolute;
-            bottom: 70px;
-            width: 20px;
-            height: 20px;
-            background: #fff;
+            bottom: 90px;
+            width: 18px;
+            height: 18px;
+            background: #FFFFFF;
             border-radius: 50%;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            animation: ball-flight 3s ease-in-out infinite;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            animation: baseball-flight 4s ease-in-out infinite;
+            z-index: 10;
         }
         
         .baseball::before {
-            content: '⚾';
+            content: '';
             position: absolute;
-            top: 50%;
+            top: 2px;
             left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 16px;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 14px;
+            background: #FF0000;
+            border-radius: 1px;
         }
         
-        @keyframes throw-left {
-            0%, 100% { transform: rotate(0deg) scale(1); }
-            25% { transform: rotate(-10deg) scale(1.1); }
-            50% { transform: rotate(0deg) scale(1); }
+        .baseball::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 2px;
+            height: 14px;
+            background: #FF0000;
+            border-radius: 1px;
         }
         
-        @keyframes throw-right {
-            0%, 100% { transform: rotate(0deg) scale(1); }
-            25% { transform: rotate(10deg) scale(1.1); }
-            50% { transform: rotate(0deg) scale(1); }
+        @keyframes pitcher-motion {
+            0%, 90%, 100% {
+                transform: translateX(0) scale(1);
+            }
+            10% {
+                transform: translateX(-5px) scale(1.05);
+            }
+            20% {
+                transform: translateX(5px) scale(1.1);
+            }
+            30% {
+                transform: translateX(0) scale(1);
+            }
         }
         
-        @keyframes ball-flight {
+        @keyframes catcher-motion {
+            0%, 40%, 100% {
+                transform: translateX(0) scale(1);
+            }
+            50% {
+                transform: translateX(-5px) scale(1.05);
+            }
+            60% {
+                transform: translateX(5px) scale(1.1);
+            }
+            70% {
+                transform: translateX(0) scale(1);
+            }
+        }
+        
+        @keyframes throw-glove {
+            0%, 90%, 100% {
+                transform: translateX(0) translateY(0) rotate(0deg);
+            }
+            10% {
+                transform: translateX(-10px) translateY(-5px) rotate(-20deg);
+            }
+            20% {
+                transform: translateX(10px) translateY(-10px) rotate(20deg);
+            }
+            30% {
+                transform: translateX(0) translateY(0) rotate(0deg);
+            }
+        }
+        
+        @keyframes catch-glove {
+            0%, 40%, 100% {
+                transform: translateX(0) translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateX(10px) translateY(-5px) rotate(20deg);
+            }
+            60% {
+                transform: translateX(-5px) translateY(-10px) rotate(-10deg);
+            }
+            70% {
+                transform: translateX(0) translateY(0) rotate(0deg);
+            }
+        }
+        
+        @keyframes baseball-flight {
             0% {
-                left: 25%;
-                bottom: 70px;
+                left: 20%;
+                bottom: 90px;
                 opacity: 1;
+                transform: rotate(0deg) scale(1);
             }
             25% {
                 left: 50%;
-                bottom: 120px;
+                bottom: 150px;
                 opacity: 1;
+                transform: rotate(180deg) scale(0.8);
             }
             50% {
-                left: 75%;
-                bottom: 70px;
+                left: 80%;
+                bottom: 90px;
                 opacity: 1;
+                transform: rotate(360deg) scale(1);
             }
             75% {
                 left: 50%;
-                bottom: 120px;
+                bottom: 150px;
                 opacity: 1;
+                transform: rotate(540deg) scale(0.8);
             }
             100% {
-                left: 25%;
-                bottom: 70px;
+                left: 20%;
+                bottom: 90px;
                 opacity: 1;
+                transform: rotate(720deg) scale(1);
             }
         }
         
@@ -711,7 +839,7 @@
                 min-width: 100%;
             }
         }
-            \n            .catchball-animation {\n                height: 120px;\n                margin-top: 30px;\n            }\n            \n            .player {\n                width: 50px;\n                height: 50px;\n                font-size: 2rem;\n            }\n            \n            .baseball {\n                width: 16px;\n                height: 16px;\n                bottom: 60px;\n            }\n            \n            .baseball::before {\n                font-size: 14px;\n            }\n        }\n    </style>
+            \n            .catchball-animation {\n                height: 140px;\n                margin-top: 30px;\n            }\n            \n            .baseball-player {\n                width: 60px;\n                height: 90px;\n            }\n            \n            .player-body {\n                width: 45px;\n                height: 60px;\n            }\n            \n            .player-head {\n                width: 25px;\n                height: 25px;\n                top: -10px;\n            }\n            \n            .player-cap {\n                width: 30px;\n                height: 15px;\n                top: -18px;\n            }\n            \n            .player-glove {\n                width: 18px;\n                height: 18px;\n                top: 15px;\n            }\n            \n            .player-legs {\n                width: 35px;\n                height: 25px;\n            }\n            \n            .baseball {\n                width: 14px;\n                height: 14px;\n                bottom: 70px;\n            }\n            \n            .baseball::before,\n            .baseball::after {\n                width: 1.5px;\n                height: 10px;\n                top: 1.5px;\n            }\n        }\n    </style>
 </head>
 <body>
     <header class="header">
@@ -725,8 +853,22 @@
                 
                 <div class="catchball-animation">
                     <div class="baseball-field"></div>
-                    <div class="player player-left">🧒</div>
-                    <div class="player player-right">👦</div>
+                    <div class="baseball-player player-left">
+                        <div class="player-body">
+                            <div class="player-head"></div>
+                            <div class="player-cap"></div>
+                            <div class="player-glove"></div>
+                        </div>
+                        <div class="player-legs"></div>
+                    </div>
+                    <div class="baseball-player player-right">
+                        <div class="player-body">
+                            <div class="player-head"></div>
+                            <div class="player-cap"></div>
+                            <div class="player-glove"></div>
+                        </div>
+                        <div class="player-legs"></div>
+                    </div>
                     <div class="baseball"></div>
                 </div>
             </div>
