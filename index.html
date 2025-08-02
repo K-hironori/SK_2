@@ -46,21 +46,6 @@
             align-items: center;
         }
         
-        /* アップロードされたSKクラブロゴオーバーレイ */
-        .header::before {
-            content: '';
-            position: absolute;
-            bottom: 30px;
-            right: 30px;
-            width: 150px;
-            height: 150px;
-            background: url('./sk-logo.jpeg') no-repeat center;
-            background-size: contain;
-            opacity: 0.7;
-            z-index: 1;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
         
         /* ダイナミックなオーバーレイ効果 */
         .header::after {
@@ -529,14 +514,6 @@
                 background-attachment: scroll; /* モバイルでのパフォーマンス向上 */
             }
             
-            .header::before {
-                bottom: 20px;
-                right: 20px;
-                width: 100px;
-                height: 100px;
-                opacity: 0.6;
-                border-radius: 10px;
-            }
             
             .main-title {
                 font-size: 1.8rem;
