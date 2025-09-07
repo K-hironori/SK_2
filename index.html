@@ -267,6 +267,7 @@
             </div>
             <div class="cta-buttons" style="margin-top: 12px;">
                 <a href="https://lin.ee/AEYKBvs" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">公式LINEで体験申込を送信する</a>
+                <button id="copy-trial-keyword" type="button" class="btn btn-secondary">「体験申込」をコピー</button>
             </div>
         </div>
     </section>
@@ -355,7 +356,31 @@
                 }
             });
         });
-        // スムーススクロールは内部アンカー未使用のため削除
+        // 「体験申込」をコピーするボタン
+        (function(){
+            const btn = document.getElementById('copy-trial-keyword');
+            if (!btn) return;
+            const text = '体験申込';
+            btn.addEventListener('click', async () => {
+                try {
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        await navigator.clipboard.writeText(text);
+                    } else {
+                        const ta = document.createElement('textarea');
+                        ta.value = text;
+                        document.body.appendChild(ta);
+                        ta.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(ta);
+                    }
+                    const original = btn.textContent;
+                    btn.textContent = 'コピーしました！';
+                    setTimeout(() => { btn.textContent = original; }, 2000);
+                } catch (e) {
+                    alert('コピーに失敗しました');
+                }
+            });
+        })();
     </script>
 </body>
 </html>
