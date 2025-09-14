@@ -17,13 +17,17 @@
         --------------------------- */
 
         :root {
-            --bg-dark: #0d1b2a; /* 深いネイビー */
-            --bg-mid: #1b263b;
-            --text-primary: #e0e1dd;
-            --text-secondary: #a9a9a9;
-            --accent-red: #e71d36; /* 鮮やかな赤 */
-            --accent-gold: #ffd700; /* 栄光を象徴するゴールド */
+            /* カラーパレット（白・紺・赤） */
             --white: #ffffff;
+            --navy: #0b2b50;      /* 紺：基調色 */
+            --navy-600: #17375e;   /* 紺（濃いめ・セクション用） */
+            --accent-red: #c8102e; /* 赤：アクセント */
+
+            /* 旧変数との互換（参照先を更新） */
+            --bg-dark: var(--navy);
+            --bg-mid: var(--navy-600);
+            --text-primary: var(--navy);
+            --text-secondary: #6b7a8c;
         }
 
         * {
@@ -38,7 +42,7 @@
 
         body {
             font-family: 'Noto Sans JP', sans-serif;
-            background-color: var(--bg-dark);
+            background-color: var(--white); /* ページ背景は白 */
             color: var(--text-primary);
             overflow-x: hidden;
         }
@@ -152,6 +156,7 @@
             text-align: center;
             margin-bottom: 80px;
             position: relative;
+            color: var(--navy);
         }
         .section-title span {
             display: block;
@@ -187,10 +192,11 @@
             text-align: center;
         }
         .achievement-card {
-            background: var(--bg-mid);
+            background: var(--white);
             padding: 40px 30px;
             border-radius: 12px;
-            border-top: 4px solid var(--accent-gold);
+            border: 1px solid rgba(11,43,80,0.1);
+            border-top: 4px solid var(--accent-red);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .achievement-card:hover {
@@ -205,22 +211,23 @@
         .achievement-title {
             font-size: 1.8rem;
             font-weight: 900;
-            color: var(--accent-gold);
+            color: var(--accent-red);
             margin-bottom: 15px;
         }
         .achievement-description {
             font-size: 1rem;
             line-height: 1.8;
+            color: var(--navy);
         }
         .trophy-icon {
             font-size: 3.5rem;
-            color: var(--accent-gold);
+            color: var(--accent-red);
             margin-bottom: 20px;
         }
 
         /* --- スタッフ紹介セクション --- */
         .staff-section {
-            background-color: var(--bg-mid);
+            background-color: var(--navy-600);
         }
         .staff-grid {
             display: grid;
@@ -228,7 +235,7 @@
             gap: 30px;
         }
         .staff-card {
-            background-color: var(--bg-dark);
+            background-color: var(--navy);
             border-radius: 12px;
             overflow: hidden;
             text-align: center;
@@ -258,8 +265,9 @@
         .staff-name {
             font-size: 1.4rem;
             font-weight: 700;
+            color: var(--white);
         }
-        .staff-note { color: var(--text-secondary); margin-top: 8px; line-height: 1.7; font-size: .95rem; }
+        .staff-note { color: #cdd6df; margin-top: 8px; line-height: 1.7; font-size: .95rem; }
 
         /* --- 環境紹介セクション --- */
         .environment-grid {
@@ -304,6 +312,7 @@
         /* --- CTA (Call to Action) セクション --- */
         .cta-section {
             text-align: center;
+            background: var(--white);
         }
         .cta-title {
             font-size: 2.8rem;
@@ -338,8 +347,8 @@
         .footer {
             padding: 50px 0;
             text-align: center;
-            background-color: #000;
-            color: var(--text-secondary);
+            background-color: var(--navy);
+            color: #cdd6df;
             font-size: 0.9rem;
         }
 
@@ -372,27 +381,27 @@
         }
 
         /* --- 新規: クラブ情報・代表メッセージ用スタイル --- */
-        .info-section { background: var(--bg-dark); }
-        .about-brief { max-width: 900px; margin: 0 auto 30px; font-size: 1.05rem; line-height: 1.9; color: var(--text-primary); }
-        .about-slogan { margin-top: 12px; font-weight: 700; color: var(--accent-red); }
+        .info-section { background: var(--white); }
+        .about-brief { max-width: 900px; margin: 0 auto 30px; font-size: 1.05rem; line-height: 1.9; color: var(--navy); }
+        .about-slogan { margin-top: 12px; font-weight: 800; color: var(--accent-red); }
         .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
-        .info-card { background: var(--bg-mid); padding: 24px; border-radius: 12px; border-top: 4px solid #415a77; }
-        .info-title { font-size: 1.2rem; font-weight: 800; margin-bottom: 10px; color: #fff; }
+        .info-card { background: var(--white); padding: 24px; border-radius: 12px; border: 1px solid rgba(11,43,80,0.12); border-top: 4px solid var(--navy-600); }
+        .info-title { font-size: 1.2rem; font-weight: 900; margin-bottom: 10px; color: var(--navy); }
         .info-sub { color: var(--text-secondary); margin-top: 8px; font-size: .95rem; }
         .bullet-list { list-style: none; padding-left: 0; }
-        .bullet-list li { position: relative; padding-left: 20px; margin: 8px 0; color: var(--text-primary); }
+        .bullet-list li { position: relative; padding-left: 20px; margin: 8px 0; color: var(--navy); }
         .bullet-list li::before { content: '•'; position: absolute; left: 0; color: var(--accent-red); }
 
-        .message-section { background: var(--bg-mid); }
+        .message-section { background: var(--navy-600); }
         .message-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-        .message-card { background: var(--bg-dark); padding: 26px; border-radius: 12px; }
+        .message-card { background: var(--navy); padding: 26px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); }
         .message-title { font-size: 1.2rem; font-weight: 900; margin-bottom: 12px; color: #fff; }
-        .message-text { color: var(--text-primary); line-height: 1.9; }
+        .message-text { color: #e6edf5; line-height: 1.9; }
 
         .staff-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px 18px; margin-top: 20px; }
-        .staff-list-item { background: var(--bg-dark); padding: 12px 14px; border-radius: 10px; display: flex; justify-content: space-between; align-items: baseline; border: 1px solid rgba(255,255,255,0.06); }
-        .staff-list-role { color: var(--text-secondary); font-weight: 700; margin-right: 8px; }
-        .staff-list-name { color: var(--text-primary); font-weight: 700; }
+        .staff-list-item { background: var(--navy); padding: 12px 14px; border-radius: 10px; display: flex; justify-content: space-between; align-items: baseline; border: 1px solid rgba(255,255,255,0.06); }
+        .staff-list-role { color: #cdd6df; font-weight: 700; margin-right: 8px; }
+        .staff-list-name { color: #ffffff; font-weight: 800; }
 
     </style>
 </head>
