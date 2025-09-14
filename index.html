@@ -189,11 +189,12 @@
         }
 
         /* --- 実績セクション --- */
+        .achievements-section .section-title { text-align: left; }
         .achievements-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
-            text-align: center;
+            text-align: left;
         }
         .achievement-card {
             background: var(--white);
@@ -202,6 +203,7 @@
             border: 1px solid rgba(11,43,80,0.1);
             border-top: 4px solid var(--accent-red);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
         }
         .achievement-card:hover {
             transform: translateY(-10px);
@@ -224,9 +226,10 @@
             color: var(--navy);
         }
         .trophy-icon {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             color: var(--accent-red);
-            margin-bottom: 20px;
+            margin-bottom: 14px;
+            line-height: 1;
         }
 
         /* --- スタッフ紹介セクション --- */
