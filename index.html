@@ -370,6 +370,29 @@
             .cta-title { font-size: 2rem; }
         }
 
+        /* --- 新規: クラブ情報・代表メッセージ用スタイル --- */
+        .info-section { background: var(--bg-dark); }
+        .about-brief { max-width: 900px; margin: 0 auto 30px; font-size: 1.05rem; line-height: 1.9; color: var(--text-primary); }
+        .about-slogan { margin-top: 12px; font-weight: 700; color: var(--accent-red); }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+        .info-card { background: var(--bg-mid); padding: 24px; border-radius: 12px; border-top: 4px solid #415a77; }
+        .info-title { font-size: 1.2rem; font-weight: 800; margin-bottom: 10px; color: #fff; }
+        .info-sub { color: var(--text-secondary); margin-top: 8px; font-size: .95rem; }
+        .bullet-list { list-style: none; padding-left: 0; }
+        .bullet-list li { position: relative; padding-left: 20px; margin: 8px 0; color: var(--text-primary); }
+        .bullet-list li::before { content: '•'; position: absolute; left: 0; color: var(--accent-red); }
+
+        .message-section { background: var(--bg-mid); }
+        .message-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .message-card { background: var(--bg-dark); padding: 26px; border-radius: 12px; }
+        .message-title { font-size: 1.2rem; font-weight: 900; margin-bottom: 12px; color: #fff; }
+        .message-text { color: var(--text-primary); line-height: 1.9; }
+
+        .staff-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px 18px; margin-top: 20px; }
+        .staff-list-item { background: var(--bg-dark); padding: 12px 14px; border-radius: 10px; display: flex; justify-content: space-between; align-items: baseline; border: 1px solid rgba(255,255,255,0.06); }
+        .staff-list-role { color: var(--text-secondary); font-weight: 700; margin-right: 8px; }
+        .staff-list-name { color: var(--text-primary); font-weight: 700; }
+
     </style>
 </head>
 <body>
@@ -428,6 +451,72 @@
             </div>
         </section>
         
+        <section class="section info-section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">
+                    <span>ABOUT</span>
+                    一色SKクラブ
+                </h2>
+                <div class="about-brief animate-on-scroll">
+                    <p>一色SKクラブは、西尾市一色町にある中学軟式野球クラブです。選手一人ひとりの個性を尊重し、楽しく野球を学べる環境作りを目指しています。地域社会との連携を大切にし、礼節を重んじることを教育理念としています。</p>
+                    <p class="about-slogan">スローガン：「一緒に楽しく野球やろうよ!!」</p>
+                </div>
+
+                <div class="info-grid stagger-animation">
+                    <div class="info-card animate-on-scroll" style="--stagger-delay: .2s;">
+                        <h3 class="info-title">練習場所</h3>
+                        <p>柳原工業Baseballグランド（一色SK専用グランド）</p>
+                        <p class="info-sub">住所：西尾市一色町坂田新田沖84</p>
+                    </div>
+                    <div class="info-card animate-on-scroll" style="--stagger-delay: .3s;">
+                        <h3 class="info-title">設備</h3>
+                        <ul class="bullet-list">
+                            <li>マシン3台完備</li>
+                            <li>屋内練習場</li>
+                        </ul>
+                    </div>
+                    <div class="info-card animate-on-scroll" style="--stagger-delay: .4s;">
+                        <h3 class="info-title">活動時間</h3>
+                        <ul class="bullet-list">
+                            <li>毎週 土・日</li>
+                            <li>3月〜11月：8:00〜17:00</li>
+                            <li>7月〜9月：8:00〜18:00</li>
+                            <li>12月〜2月：8:00〜16:00</li>
+                        </ul>
+                    </div>
+                    <div class="info-card animate-on-scroll" style="--stagger-delay: .5s;">
+                        <h3 class="info-title">会費について</h3>
+                        <ul class="bullet-list">
+                            <li>入会金：1人 5,000円</li>
+                            <li>月会費：1人 5,000円</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section message-section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">
+                    <span>MESSAGE</span>
+                    代表挨拶・指導方針
+                </h2>
+                <div class="message-grid">
+                    <div class="message-card animate-on-scroll">
+                        <h3 class="message-title">代表　伴 千寿樹</h3>
+                        <p class="message-text">お子様一人ひとりの個性と才能を大切に育み、チームワークの精神を培ってまいります。単に野球技術の向上だけでなく、長期的な視点でお子様の成長をサポートし、将来のキャリアにも良い影響を与えられるよう努めてまいります。私たちの理念は「笑顔で野球に挑戦し、楽しみながら共に成長すること」です。礼節を重んじつつ、未来を築く力を育てていく所存です。お子様が野球を通じて人間的にも成長できるよう、精一杯サポートさせていただきます。</p>
+                    </div>
+                    <div class="message-card animate-on-scroll">
+                        <h3 class="message-title">指導方針・目標・理念</h3>
+                        <ul class="bullet-list">
+                            <li><strong>指導方針：</strong> 選手一人ひとりの個性と才能を最大限に引き出し、チームワークを大切にする</li>
+                            <li><strong>目標：</strong> 長期的な視点で選手の成長をサポートし、将来のキャリアにも良い影響を与える</li>
+                            <li><strong>理念：</strong> 笑顔で野球に挑戦し、楽しみながら共に成長！礼節を重んじつつ未来を築く力を育もう</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="section staff-section">
             <div class="container">
                 <h2 class="section-title animate-on-scroll">
@@ -463,6 +552,19 @@
                             <h3 class="staff-name">チームメイト</h3>
                         </div>
                     </div>
+                </div>
+                <h3 class="section-subtitle animate-on-scroll" style="text-align:center; margin-top:60px; font-size:1.4rem; font-weight:800; color:#e0e1dd;">その他スタッフ</h3>
+                <div class="staff-list animate-on-scroll">
+                    <div class="staff-list-item"><span class="staff-list-role">副代表</span><span class="staff-list-name">岡田 隆宏</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">打撃コーチ</span><span class="staff-list-name">杉浦 逸夫</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">守備コーチ</span><span class="staff-list-name">福田 淳一</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">投手コーチ</span><span class="staff-list-name">前沢 貴</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">Under・C監督</span><span class="staff-list-name">大沢 勇太</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">Under・Cヘッドコーチ</span><span class="staff-list-name">伴 俊介</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">バッテリーコーチ</span><span class="staff-list-name">金原 稔樹</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">バッテリーコーチ</span><span class="staff-list-name">稲垣 承</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">トレーニングコーチ</span><span class="staff-list-name">中嶋 久弥</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">打撃コーチ</span><span class="staff-list-name">川口 浩規</span></div>
                 </div>
             </div>
         </section>
