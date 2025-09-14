@@ -121,30 +121,7 @@
             margin-bottom: 40px;
         }
 
-        .scroll-down {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--navy);
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            animation: bounce 2s infinite;
-        }
-        .scroll-down::after {
-            content: '';
-            display: block;
-            width: 1px;
-            height: 40px;
-            background: var(--white);
-            margin: 10px auto 0;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
-            40% { transform: translate(-50%, -10px); }
-            60% { transform: translate(-50%, -5px); }
-        }
+        
 
         /* --- セクション共通スタイル --- */
         .section {
@@ -395,7 +372,7 @@
             <h1 class="hero-title">俺たちの野球は、<br>ここから始まる。</h1>
             <p class="hero-subtitle">全国の頂きを知るチームで、最高の仲間と、<br>本気で野球に向き合う。</p>
         </div>
-        <div class="scroll-down">SCROLL</div>
+        
     </header>
 
     <main>
