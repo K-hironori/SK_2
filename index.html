@@ -170,7 +170,7 @@
 
         /* --- 理念セクション --- */
         .philosophy-section {
-            background-color: var(--bg-mid);
+            background-color: var(--white);
         }
         .philosophy-content {
             text-align: center;
@@ -179,6 +179,7 @@
             line-height: 2.2;
             max-width: 900px;
             margin: 0 auto;
+            color: var(--navy);
         }
         .philosophy-content strong {
             color: var(--accent-red);
@@ -273,43 +274,10 @@
         .staff-note { color: var(--text-secondary); margin-top: 8px; line-height: 1.7; font-size: .95rem; }
 
         /* --- 環境紹介セクション --- */
-        .environment-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            align-items: center;
-        }
-        .environment-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-        }
-        .environment-item img {
-            width: 100%;
-            display: block;
-            transition: transform 0.4s ease;
-        }
-        .environment-item:hover img {
-            transform: scale(1.1);
-        }
-        .environment-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: linear-gradient(to top, rgba(13, 27, 42, 0.9), transparent);
-            color: var(--white);
-            padding: 40px 20px 20px;
-            text-align: center;
-        }
-        .environment-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-        /* グリッドレイアウトの調整 */
-        .environment-item:nth-child(1) { grid-column: 1 / 3; }
-        .environment-item:nth-child(2) { grid-column: 1 / 2; }
-        .environment-item:nth-child(3) { grid-column: 2 / 3; }
+        .environment-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .environment-item { background: var(--white); border: 1px solid rgba(11,43,80,0.12); border-top: 4px solid var(--accent-red); border-radius: 12px; padding: 28px; text-align: center; }
+        .environment-overlay { position: static; background: transparent; color: var(--navy); padding: 0; }
+        .environment-title { font-size: 1.2rem; font-weight: 900; color: var(--navy); }
 
 
         /* --- CTA (Call to Action) セクション --- */
@@ -577,7 +545,7 @@
                         </div>
                     </div>
                 </div>
-                <h3 class="section-subtitle animate-on-scroll" style="text-align:center; margin-top:60px; font-size:1.4rem; font-weight:800; color:#e0e1dd;">その他スタッフ</h3>
+                <h3 class="section-subtitle animate-on-scroll" style="text-align:center; margin-top:60px; font-size:1.4rem; font-weight:800; color: var(--navy);">その他スタッフ</h3>
                 <div class="staff-list animate-on-scroll">
                     <div class="staff-list-item"><span class="staff-list-role">副代表</span><span class="staff-list-name">岡田 隆宏</span></div>
                     <div class="staff-list-item"><span class="staff-list-role">打撃コーチ</span><span class="staff-list-name">杉浦 逸夫</span></div>
