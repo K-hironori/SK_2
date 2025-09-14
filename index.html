@@ -3,23 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>一色SKクラブ | 全国準優勝の実績を持つ中学軟式野球チーム</title>
-    <meta name="description" content="西尾市一色町の中学軟式野球チーム「一色SKクラブ」。全国準優勝の実績と豊富な経験で、野球技術と人間性の成長を全力サポート。体験練習は公式LINEから随時受付中！">
+    <title>【TEAM INTRODUCTION】一色SKクラブ | 俺たちの野球は、ここから始まる。</title>
+    <meta name="description" content="全国の頂きを知る中学軟式野球チーム「一色SKクラブ」。本気で野球に向き合い、最高の仲間と成長する日々がここにある。君の挑戦を待っている。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
-        /* --- 基本設定 & 新フォント --- */
+        /* --- デザインコンセプト ---
+        1. ダークモード基調で力強さと洗練さを両立
+        2. 動画と大胆なタイポグラフィで視覚的インパクトを最大化
+        3. ストーリーテリングを意識したセクション構成
+        4. スクロールアニメーションで没入感を演出
+        --------------------------- */
+
         :root {
-            --primary-blue: #1e3c72;
-            --secondary-blue: #2a5298;
-            --accent-red: #ff6b6b;
-            --accent-orange: #ee5a24;
-            --accent-green: #00b894;
-            --text-dark: #2c3e50;
-            --text-light: #555;
-            --bg-light: #f8f9fa;
+            /* カラーパレット（白・紺・赤） */
             --white: #ffffff;
+            --navy: #0b2b50;      /* 紺：基調色 */
+            --navy-600: #17375e;   /* 紺（濃いめ・セクション用） */
+            --accent-red: #c8102e; /* 赤：アクセント */
+
+            /* 旧変数との互換（参照先を更新） */
+            --bg-dark: var(--navy);
+            --bg-mid: var(--navy-600);
+            --text-primary: var(--navy);
+            --text-secondary: #6b7a8c;
         }
 
         * {
@@ -27,485 +35,548 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         html {
             scroll-behavior: smooth;
         }
 
         body {
             font-family: 'Noto Sans JP', sans-serif;
-            line-height: 1.7;
-            color: #333;
-            background-color: var(--bg-light);
-            /* カーソルを非表示にする */
-            cursor: none;
+            background-color: var(--white); /* ページ背景は白 */
+            color: var(--text-primary);
+            overflow-x: hidden;
         }
-        
+
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
+            position: relative;
         }
-        
-        /* --- ヘッダー & パララックス効果 --- */
-        .header {
-            background-image: 
-                linear-gradient(rgba(30, 60, 114, 0.75), rgba(42, 82, 152, 0.75)),
-                url('public/IMG_3643.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: var(--white);
-            min-height: 100vh;
+
+        /* --- ヒーローセクション (動画背景) --- */
+        .hero {
+            height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: center;
             text-align: center;
             position: relative;
             overflow: hidden;
+            color: var(--navy);
+            background: var(--white);
+        }
+
+        #bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -2;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.88); /* 白ベースに合わせて明るいオーバーレイ */
+            z-index: -1;
+        }
+
+        .hero-content {
+            z-index: 1;
+            animation: fadeInHero 1.5s ease-out forwards;
         }
         
-        .header-content {
-            position: relative;
-            z-index: 2;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            animation: fadeInText 1s ease-out forwards;
-        }
-        
-        @keyframes fadeInText {
-            from { opacity: 0; transform: translateY(20px); }
+        @keyframes fadeInHero {
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .main-title {
-            font-size: 2.8rem;
-            font-weight: 900;
-            margin-bottom: 25px;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            letter-spacing: 1px;
-        }
-        
-        .sub-title {
-            font-size: 1.3rem;
-            margin-bottom: 45px;
-            opacity: 0.95;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+        .hero-logo {
+            font-size: 1.5rem;
             font-weight: 500;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            letter-spacing: 2px;
         }
-        
-        /* --- ボタン & ホバーエフェクト --- */
-        .cta-buttons {
+
+        .hero-title {
+            font-size: 3.8rem;
+            font-weight: 900;
+            margin: 10px 0 20px;
+            text-shadow: 0 5px 20px rgba(0,0,0,0.6);
+            line-height: 1.3;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--navy);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            animation: bounce 2s infinite;
+        }
+        .scroll-down::after {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 40px;
+            background: var(--white);
+            margin: 10px auto 0;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+            40% { transform: translate(-50%, -10px); }
+            60% { transform: translate(-50%, -5px); }
+        }
+
+        /* --- セクション共通スタイル --- */
+        .section {
+            padding: 120px 0;
+            overflow: hidden;
+        }
+        .section-title {
+            font-size: 3rem;
+            font-weight: 900;
+            text-align: left;
+            margin-bottom: 80px;
+            position: relative;
+            color: var(--navy);
+        }
+        .section-title span {
+            display: block;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--accent-red);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        /* --- 理念セクション --- */
+        .philosophy-section {
+            background-color: var(--white);
+        }
+        .philosophy-content {
+            text-align: left;
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 2.1;
+            max-width: 900px;
+            margin: 0 auto;
+            color: var(--navy);
+            border-left: 4px solid var(--accent-red);
+            padding-left: 18px;
+        }
+        .philosophy-content strong {
+            color: var(--accent-red);
+            font-weight: 700;
+        }
+
+        /* --- 実績セクション --- */
+        .achievements-section .section-title { text-align: left; }
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            text-align: left;
+        }
+        .achievement-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(11,43,80,0.1);
+            border-top: 4px solid var(--accent-red);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+        }
+        .achievement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        .achievement-year {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+        .achievement-title {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--accent-red);
+            margin-bottom: 15px;
+        }
+        .achievement-description {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--navy);
+            margin-top: 4px;
+        }
+        .trophy-icon {
+            font-size: 3.2rem;
+            color: var(--accent-red);
+            margin-bottom: 14px;
+            line-height: 1;
+        }
+
+        /* --- スタッフ紹介セクション --- */
+        .staff-section {
+            background-color: var(--white);
+        }
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .staff-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: left;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(11,43,80,0.12);
+            border-top: 4px solid var(--accent-red);
+        }
+        .staff-card:hover {
+            transform: scale(1.05);
+        }
+        .staff-image {
+            width: 100%;
+            height: 280px;
+            background-color: #415a77;
             display: flex;
-            flex-direction: column;
-            gap: 15px;
             align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: rgba(255,255,255,0.2);
+        }
+        .staff-info {
+            padding: 25px;
+        }
+        .staff-role {
+            color: var(--accent-red);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        .staff-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+        .staff-note { color: var(--text-secondary); margin-top: 8px; line-height: 1.7; font-size: .95rem; }
+
+        /* --- 環境紹介セクション --- */
+        .environment-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .environment-item { background: var(--white); border: 1px solid rgba(11,43,80,0.12); border-top: 4px solid var(--accent-red); border-radius: 12px; padding: 28px; text-align: left; }
+        .environment-overlay { position: static; background: transparent; color: var(--navy); padding: 0; }
+        .environment-title { font-size: 1.2rem; font-weight: 900; color: var(--navy); }
+
+
+        /* --- CTA (Call to Action) セクション --- */
+        .cta-section {
+            text-align: center;
+            background: var(--white);
+        }
+        .cta-title {
+            font-size: 2.2rem;
+            font-weight: 900;
+            line-height: 1.6;
+            max-width: 720px;
+            margin: 0 auto 28px;
+            text-wrap: balance; /* 見出しの行分割を綺麗に */
+        }
+        .nowrap { white-space: nowrap; }
+        .cta-title .highlight {
+            color: var(--accent-red);
         }
         
         .btn {
             display: inline-block;
-            padding: 16px 35px;
-            border-radius: 50px;
+            padding: 18px 45px;
+            background: var(--accent-red);
+            color: var(--white);
             text-decoration: none;
+            font-size: 1.1rem;
             font-weight: 700;
-            transition: all 0.4s ease;
-            text-align: center;
-            min-width: 300px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            border: none;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            transition: all 0.5s ease;
-            z-index: -1;
-        }
-        
-        .btn:hover::before {
-            left: 0;
+            border-radius: 50px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 20px rgba(231, 29, 54, 0.4);
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-            color: var(--white);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(231, 29, 54, 0.6);
         }
 
-        .btn-primary {
-            background: linear-gradient(45deg, var(--accent-red), var(--accent-orange));
-            color: var(--white);
-        }
-
-        .btn-primary::before {
-            background: linear-gradient(45deg, #ee5a24, #ff6b6b);
-        }
-
-        .btn-secondary {
-            background: linear-gradient(45deg, var(--accent-green), #00cec9);
-            color: var(--white);
-        }
-
-        .btn-secondary::before {
-            background: linear-gradient(45deg, #00cec9, var(--accent-green));
-        }
-        
-        /* --- セクション共通 & スクロールアニメーション --- */
-        .section {
-            padding: 90px 0;
-            overflow: hidden;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 900;
+        /* --- フッター --- */
+        .footer {
+            padding: 50px 0;
             text-align: center;
-            margin-bottom: 60px;
-            color: var(--text-dark);
+            background-color: var(--navy);
+            color: #cdd6df;
+            font-size: 0.9rem;
         }
-        
-        /* スクロールアニメーション用の基本スタイル */
+
+        /* --- アニメーション --- */
         .animate-on-scroll {
             opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-            transition-delay: 0.2s;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-
         .animate-on-scroll.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* --- カードデザインの改良 --- */
-        .result-card, .reason-card, .staff-card {
-            background: var(--white);
-            border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .stagger-animation > * {
+            transition-delay: var(--stagger-delay, 0.2s);
         }
 
-        .result-card:hover, .reason-card:hover, .staff-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
-        }
-
-        /* 試合結果カード */
-        .latest-results-section { background-color: #f8f9fa; }
-        .results-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            max-width: 1000px; margin: 0 auto;
-        }
-        .result-card { padding: 25px; border-left: 8px solid #ccc; }
-        .result-card.win { border-left-color: var(--accent-red); }
-        .result-card.win .result-outcome { color: var(--accent-red); }
-        .result-card.loss { border-left-color: #747d8c; }
-        .result-card.loss .result-outcome { color: #747d8c; }
-        .result-header { margin-bottom: 15px; color: #555; font-size: 0.9rem; display: flex; justify-content: space-between; }
-        .result-body { display: flex; align-items: center; justify-content: space-around; margin-bottom: 15px; }
-        .result-team { font-weight: 600; font-size: 1.1rem; }
-        .result-score { font-size: 2.2rem; font-weight: 700; color: var(--text-dark); margin: 0 15px; }
-        .result-footer .result-outcome { font-weight: 700; font-size: 1.2rem; letter-spacing: 2px; }
-
-        /* 理念セクション */
-        .vision-section { background: var(--white); }
-        .vision-content { max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem; line-height: 2; }
-        .vision-content p { margin-bottom: 1.5em; }
-        .highlight { font-weight: 700; color: var(--primary-blue); background: linear-gradient(to top, rgba(102, 126, 234, 0.2) 50%, transparent 50%); }
-
-        /* 選ばれる理由セクション */
-        .reasons-section { background: var(--bg-light); }
-        .reasons-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-        }
-        .reason-card { padding: 40px; }
-        .reason-number {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: var(--white);
-            width: 60px; height: 60px;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.8rem; font-weight: 700;
-            margin-bottom: 25px;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.5);
-        }
-        .reason-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 15px; color: var(--text-dark); }
-        .reason-text { color: var(--text-light); }
-
-        /* (省略された他のセクションスタイル...) */
-        
-        /* --- ここから追加・変更したスタイル --- */
-
-        /* 1. テキストアニメーション強化 */
-        .main-title.js-split-text {
-            opacity: 1;
-        }
-        .main-title span {
-            display: inline-block;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: title-char-animation 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-            animation-delay: var(--char-delay);
-        }
-        @keyframes title-char-animation {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* 2. カーソルエフェクト */
-        .cursor-dot,
-        .cursor-outline {
-            pointer-events: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            z-index: 9999;
-            opacity: 0;
-            transition: opacity 0.3s, transform 0.3s;
-        }
-        .cursor-dot {
-            width: 8px;
-            height: 8px;
-            background-color: var(--accent-red);
-        }
-        .cursor-outline {
-            width: 40px;
-            height: 40px;
-            border: 2px solid var(--accent-red);
-            transition: width 0.4s, height 0.4s, border-color 0.4s;
-        }
-        /* リンクやボタンホバー時のアニメーション */
-        a:hover ~ .cursor-outline,
-        .btn:hover ~ .cursor-outline,
-        .faq-question:hover ~ .cursor-outline {
-            width: 60px;
-            height: 60px;
-            border-color: var(--accent-orange);
-        }
+        /* --- レスポンシブ --- */
         @media (max-width: 768px) {
-            .cursor-dot, .cursor-outline {
-                display: none; /* スマホでは非表示 */
-            }
-            body {
-                cursor: auto; /* スマホでは通常のカーソル（指）を表示 */
-            }
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1rem; }
+            .section { padding: 80px 0; }
+            .section-title { font-size: 2.2rem; margin-bottom: 60px; }
+            .philosophy-content { font-size: 1.05rem; line-height: 1.9; }
+            .environment-grid { grid-template-columns: 1fr; }
+            .environment-item:nth-child(1),
+            .environment-item:nth-child(2),
+            .environment-item:nth-child(3) { grid-column: auto; }
+            .cta-title { font-size: 1.45rem; line-height: 1.75; max-width: 92%; margin: 0 auto 22px; }
         }
 
-        /* 3. 縫い目風アクセント */
-        .stitch-divider {
-            width: 100%;
-            text-align: center;
-            padding: 40px 0;
-            background-color: var(--white);
-        }
-        .stitch-divider img {
-            max-width: 200px;
-            opacity: 0.7;
-        }
+        /* --- 新規: クラブ情報・代表メッセージ用スタイル --- */
+        .info-section { background: var(--white); }
+        .about-brief { max-width: 900px; margin: 0 auto 30px; font-size: 1.05rem; line-height: 1.9; color: var(--navy); }
+        .about-slogan { margin-top: 12px; font-weight: 800; color: var(--accent-red); }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+        .info-card { background: var(--white); padding: 24px; border-radius: 12px; border: 1px solid rgba(11,43,80,0.12); border-top: 4px solid var(--navy-600); }
+        .info-title { font-size: 1.2rem; font-weight: 900; margin-bottom: 10px; color: var(--navy); }
+        .info-sub { color: var(--text-secondary); margin-top: 8px; font-size: .95rem; }
+        .bullet-list { list-style: none; padding-left: 0; }
+        .bullet-list li { position: relative; padding-left: 20px; margin: 8px 0; color: var(--navy); }
+        .bullet-list li::before { content: '•'; position: absolute; left: 0; color: var(--accent-red); }
 
-        /* 4. 写真ギャラリー */
-        .gallery-section {
-            background-color: var(--white);
-        }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .gallery-item {
-            height: 300px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .gallery-item:hover {
-            transform: translateY(-8px) scale(1.03);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
-        }
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .message-section { background: var(--white); }
+        .message-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .message-card { background: var(--white); padding: 26px; border-radius: 12px; border: 1px solid rgba(11,43,80,0.12); border-top: 4px solid var(--accent-red); }
+        .message-title { font-size: 1.2rem; font-weight: 900; margin-bottom: 12px; color: var(--navy); }
+        .message-text { color: var(--navy); line-height: 1.9; }
 
-        /* (既存のFAQやフッターなどのスタイルは省略) */
-        .faq-section { background: var(--bg-light); padding: 80px 0; }
-        .faq-item { background: var(--white); margin-bottom: 15px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e0e0e0; }
-        .faq-question { padding: 20px; font-weight: 700; cursor: pointer; position: relative; color: var(--text-dark); font-size: 1.1rem; }
-        .faq-question::after { content: '+'; position: absolute; right: 20px; font-size: 2rem; font-weight: 300; transition: transform 0.3s ease, color 0.3s ease; color: var(--primary-blue); }
-        .faq-question.active::after { transform: rotate(45deg); color: var(--accent-red); }
-        .faq-answer { background: #fafafa; overflow: hidden; max-height: 0; transition: max-height 0.5s ease-out, padding 0.5s ease-out; padding: 0 20px; border-top: 1px solid #e0e0e0; line-height: 1.8; color: var(--text-light); }
-        .footer { background: var(--text-dark); color: var(--white); text-align: center; padding: 40px 0; font-size: 0.9rem; }
-        .closing-section { background: linear-gradient(135deg, var(--text-dark), #34495e); color: var(--white); text-align: center; }
-        .closing-message { font-size: 1.2rem; line-height: 1.8; margin-bottom: 40px; }
-        .section-subtitle { font-size: 1.5rem; font-weight: 700; margin-bottom: 20px; color: #34495e; }
-        .staff-section, .parents-section, .about-section, .activity-section, .line-section { background: var(--white); } /* 仮の背景色 */
-        
+        .staff-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px 18px; margin-top: 20px; }
+        .staff-list-item { background: var(--white); padding: 12px 14px; border-radius: 10px; display: flex; justify-content: space-between; align-items: baseline; border: 1px solid rgba(11,43,80,0.12); }
+        .staff-list-role { color: var(--text-secondary); font-weight: 700; margin-right: 8px; }
+        .staff-list-name { color: var(--navy); font-weight: 800; }
+
     </style>
 </head>
 <body>
-    
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
 
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <h1 class="main-title js-split-text">一緒に楽しく野球やろうよ!!</h1>
-                <p class="sub-title">西尾市一色町を拠点に全国を目指す中学軟式野球クラブ。<br>野球技術はもちろん、人としての成長を全力でサポートします。仲間と共に、最高の瞬間を目指そう！</p>
-                <div class="cta-buttons">
-                    <a href="https://lin.ee/AEYKBvs" class="btn btn-primary" target="_blank">LINE公式アカウントを友だち追加</a>
-                </div>
-            </div>
+    <header class="hero">
+        <video playsinline autoplay muted loop id="bg-video">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-baseball-player-hitting-a-ball-2321-large.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <p class="hero-logo">ISSHIKI SK CLUB</p>
+            <h1 class="hero-title">俺たちの野球は、<br>ここから始まる。</h1>
+            <p class="hero-subtitle">全国の頂きを知るチームで、最高の仲間と、本気で野球に向き合う。</p>
         </div>
+        <div class="scroll-down">SCROLL</div>
     </header>
 
     <main>
-        <section class="section latest-results-section">
+        
+        <section class="section info-section">
             <div class="container">
-                <h2 class="section-title animate-on-scroll">最新試合結果</h2>
-                <div class="results-container animate-on-scroll">
-                    <div class="result-card win">
-                        <div class="result-header">
-                            <span>2025年8月2日</span>
-                            <span>第21回しずおか中学軟式野球クラブ大会</span>
-                        </div>
-                        <div class="result-body">
-                            <span>豊田南クラブ</span>
-                            <span class="result-score">1 - 13</span>
-                            <span>vs 一色SKクラブ</span>
-                        </div>
-                        <div class="result-footer">
-                            <span class="result-outcome">優勝🏆</span>
-                        </div>
+                <h2 class="section-title animate-on-scroll">
+                    <span>ABOUT</span>
+                    一色SKクラブ
+                </h2>
+                <div class="about-brief animate-on-scroll">
+                    <p>一色SKクラブは、西尾市一色町にある中学軟式野球クラブです。選手一人ひとりの個性を尊重し、楽しく野球を学べる環境作りを目指しています。地域社会との連携を大切にし、礼節を重んじることを教育理念としています。</p>
+                    <p class="about-slogan">スローガン：「一緒に楽しく野球やろうよ!!」</p>
+                </div>
+
+                <div class="info-grid stagger-animation">
+                    <div class="info-card animate-on-scroll" style="--stagger-delay: .2s;">
+                        <h3 class="info-title">練習場所</h3>
+                        <p>柳原工業Baseballグランド（一色SK専用グランド）</p>
+                        <p class="info-sub">住所：西尾市一色町坂田新田沖84</p>
+                    </div>
+                    <div class="info-card animate-on-scroll" style="--stagger-delay: .3s;">
+                        <h3 class="info-title">設備</h3>
+                        <ul class="bullet-list">
+                            <li>マシン3台完備</li>
+                            <li>屋内練習場</li>
+                        </ul>
+                    </div>
+                    <div class="info-card animate-on-scroll" style="--stagger-delay: .4s;">
+                        <h3 class="info-title">活動時間</h3>
+                        <ul class="bullet-list">
+                            <li>毎週 土・日</li>
+                            <li>3月〜11月：8:00〜17:00</li>
+                            <li>7月〜9月：8:00〜18:00</li>
+                            <li>12月〜2月：8:00〜16:00</li>
+                        </ul>
+                    </div>
+                    <div class="info-card animate-on-scroll" style="--stagger-delay: .5s;">
+                        <h3 class="info-title">会費について</h3>
+                        <ul class="bullet-list">
+                            <li>入会金：1人 5,000円</li>
+                            <li>月会費：1人 5,000円</li>
+                            <li>同家族2人目以降：入会金無料</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section vision-section">
+        <section class="section message-section">
             <div class="container">
-                <h2 class="section-title animate-on-scroll">なぜ、私たちは「楽しむこと」と「勝利」の両方を追求するのか。</h2>
-                <div class="vision-content animate-on-scroll">
-                    <p>野球が好きだから、もっと上手くなりたい。仲間と一緒に、もっと強くなりたい。そして、最高の舞台で思い切り戦いたい。</p>
-                    <p><span class="highlight">一色SKクラブは、そんな純粋な気持ちを大切にしています。</span></p>
-                    <p>私たちの理念は「笑顔で野球に挑戦し、楽しみながら共に成長すること」。厳しい練習でも、仲間がいるから頑張れる。困難な場面でも、チーム一丸となって乗り越えられる。</p>
-                    <p>野球を通じて、技術だけでなく、礼儀や感謝の心、そして仲間を思いやる優しさを育みます。</p>
-                    <p><span class="highlight">楽しいから本気になれる。本気だから成長できる。</span></p>
-                    <p>それが、私たちの目指す野球です。</p>
+                <h2 class="section-title animate-on-scroll">
+                    <span>MESSAGE</span>
+                    代表挨拶・指導方針
+                </h2>
+                <div class="message-grid">
+                    <div class="message-card animate-on-scroll">
+                        <h3 class="message-title">代表　伴 千寿樹</h3>
+                        <p class="message-text">
+                            お子様一人ひとりの個性と才能を大切に育み、チームワークの精神を培ってまいります。単に野球技術の向上だけでなく、長期的な視点でお子様の成長をサポートし、将来のキャリアにも良い影響を与えられるよう努めてまいります。<br><br>
+                            私たちの理念は「笑顔で野球に挑戦し、楽しみながら共に成長すること」です。礼節を重んじつつ、未来を築く力を育てていく所存です。<br><br>
+                            お子様が野球を通じて人間的にも成長できるよう、精一杯サポートさせていただきます。
+                        </p>
+                    </div>
+                    <div class="message-card animate-on-scroll">
+                        <h3 class="message-title">指導方針・目標・理念</h3>
+                        <ul class="bullet-list">
+                            <li><strong>指導方針：</strong> 選手一人ひとりの個性と才能を最大限に引き出し、チームワークを大切にする</li>
+                            <li><strong>目標：</strong> 長期的な視点で選手の成長をサポートし、将来のキャリアにも良い影響を与える</li>
+                            <li><strong>理念：</strong> 笑顔で野球に挑戦し、楽しみながら共に成長！礼節を重んじつつ未来を築く力を育もう</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section staff-section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">
+                    <span>THE TEAM</span>
+                    最高の仲間と指導者
+                </h2>
+                <div class="staff-grid stagger-animation">
+                    <div class="staff-card animate-on-scroll" style="--stagger-delay: 0.2s;">
+                        <div class="staff-info">
+                            <p class="staff-role">代表</p>
+                            <h3 class="staff-name">伴 千寿樹</h3>
+                            <p class="staff-note">お子様一人ひとりの個性と才能を大切に育み、チームワークの精神を培ってまいります。</p>
+                        </div>
+                    </div>
+                    <div class="staff-card animate-on-scroll" style="--stagger-delay: 0.3s;">
+                        <div class="staff-info">
+                            <p class="staff-role">副代表</p>
+                            <h3 class="staff-name">岡田 隆宏</h3>
+                            <p class="staff-note">副代表としてクラブ運営をサポートし、選手たちの育成にも力を入れています。</p>
+                        </div>
+                    </div>
+                    <div class="staff-card animate-on-scroll" style="--stagger-delay: 0.4s;">
+                        <div class="staff-info">
+                            <p class="staff-role">監督</p>
+                            <h3 class="staff-name">葛上 真一</h3>
+                            <p class="staff-note">監督としてチーム全体の指導を行い、選手たちの技術向上を目指しています。</p>
+                        </div>
+                    </div>
+                    <div class="staff-card animate-on-scroll" style="--stagger-delay: 0.6s;">
+                        <div class="staff-info">
+                            <p class="staff-role">ヘッドコーチ</p>
+                            <h3 class="staff-name">山口 信二</h3>
+                            <p class="staff-note">チームの雰囲気づくりを重視。明るく前向きな環境で、互いに高め合いながら野球を楽しめるよう心がけています。</p>
+                        </div>
+                    </div>
+                    <div class="staff-card animate-on-scroll" style="--stagger-delay: 0.8s;">
+                        <div class="staff-info">
+                            <p class="staff-role">最高の</p>
+                            <h3 class="staff-name">チームメイト</h3>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="section-subtitle animate-on-scroll" style="text-align:left; margin-top:60px; font-size:1.4rem; font-weight:800; color: var(--navy);">その他スタッフ</h3>
+                <div class="staff-list animate-on-scroll">
+                    <div class="staff-list-item"><span class="staff-list-role">副代表</span><span class="staff-list-name">岡田 隆宏</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">打撃コーチ</span><span class="staff-list-name">杉浦 逸夫</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">守備コーチ</span><span class="staff-list-name">福田 淳一</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">投手コーチ</span><span class="staff-list-name">前沢 貴</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">Under・C監督</span><span class="staff-list-name">大沢 勇太</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">Under・Cヘッドコーチ</span><span class="staff-list-name">伴 俊介</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">バッテリーコーチ</span><span class="staff-list-name">金原 稔樹</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">バッテリーコーチ</span><span class="staff-list-name">稲垣 承</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">トレーニングコーチ</span><span class="staff-list-name">中嶋 久弥</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">打撃コーチ</span><span class="staff-list-name">川口 浩規</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section environment-section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">
+                    <span>OUR FIELD</span>
+                    野球に打ち込める最高の環境
+                </h2>
+                <div class="environment-grid stagger-animation">
+                     <div class="environment-item animate-on-scroll" style="--stagger-delay: 0.2s;">
+                        
+                        <div class="environment-overlay">
+                            <h3 class="environment-title">一色SK専用グラウンド</h3>
+                        </div>
+                    </div>
+                    <div class="environment-item animate-on-scroll" style="--stagger-delay: 0.4s;">
+                        
+                        <div class="environment-overlay">
+                            <h3 class="environment-title">雨天でも万全の屋内練習場</h3>
+                        </div>
+                    </div>
+                    <div class="environment-item animate-on-scroll" style="--stagger-delay: 0.6s;">
+                        
+                        <div class="environment-overlay">
+                            <h3 class="environment-title">最新鋭のマシン設備</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
         
-        <div class="stitch-divider animate-on-scroll">
-            
-        </div>
-
-        <section class="section reasons-section">
-            <div class="container">
-                <h2 class="section-title animate-on-scroll">一色SKクラブが選ばれる3つの理由</h2>
-                <div class="reasons-grid">
-                    <div class="reason-card animate-on-scroll">
-                        <div class="reason-number">1</div>
-                        <h3 class="reason-title">確かな実績が、君の成長を加速させる</h3>
-                        <p class="reason-text"><strong>【主な実績】</strong><br><strong>・2022年 全国大会 優勝</strong><br><strong>・2024年 全国大会 準優勝</strong><br><br>全国の頂点に立った経験があります。次は君が、この常勝チームの一員として、最高の瞬間を掴む番だ。</p>
-                    </div>
-                    <div class="reason-card animate-on-scroll">
-                        <div class="reason-number">2</div>
-                        <h3 class="reason-title">君の個性が、チームの力になる</h3>
-                        <p class="reason-text"><strong>一人ひとりと向き合う指導体制</strong><br><br>経験豊富な指導者が、君の個性や才能を見極め、長期的な視点で成長をサポートします。</p>
-                    </div>
-                    <div class="reason-card animate-on-scroll">
-                        <div class="reason-number">3</div>
-                        <h3 class="reason-title">地域に支えられ、思い切り野球に集中できる</h3>
-                        <p class="reason-text"><strong>野球に打ち込める充実した環境</strong><br><br>専用グラウンドでの練習環境、地域からの温かいサポート。君が安心して野球に集中できる環境が整っています。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section gallery-section">
-            <div class="container">
-                <h2 class="section-title animate-on-scroll">GALLERY - チームの日常</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item animate-on-scroll"></div>
-                    <div class="gallery-item animate-on-scroll"></div>
-                    <div class="gallery-item animate-on-scroll"></div>
-                    <div class="gallery-item animate-on-scroll"></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section faq-section">
+        <section id="cta" class="section cta-section">
             <div class="container animate-on-scroll">
-                <h2 class="section-title">よくある質問</h2>
-                <div class="faq-item">
-                    <div class="faq-question">Q1. 活動時間を教えてください。</div>
-                    <div class="faq-answer"><strong>A1.</strong> 基本は土日の8:00～17:00です。季節により変動があります。</div>
-                </div>
-                 <div class="faq-item">
-                    <div class="faq-question">Q2. 保護者の当番などありますか？</div>
-                    <div class="faq-answer"><strong>A2.</strong> 保護者の方の当番は一切ありません。</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section closing-section">
-            <div class="container animate-on-scroll">
-                <h2 class="section-title" style="color:white;">さあ、最高の仲間と、最高の舞台へ。</h2>
-                <div class="closing-message">
-                    <p><strong>不安なこと、気になることは何でもご相談ください。</strong></p>
-                    <p>まずは一度、グラウンドの雰囲気を体験しに来ませんか？<br><strong>下のボタンから友だち追加をお願いします。君の挑戦を、チーム一同、心から待っています。</strong></p>
-                </div>
-                <div class="cta-buttons">
-                    <a href="https://lin.ee/AEYKBvs" class="btn btn-primary" target="_blank">LINE公式アカウントを友だち追加</a>
-                </div>
+                <h2 class="cta-title">
+                    次は、<span class="highlight">君が歴史を創る番だ。</span><br>
+                    一色SKクラブで、最高の<span class="nowrap">3年間を。</span>
+                </h2>
+                <a href="https://lin.ee/AEYKBvs" class="btn" target="_blank">まずは体験練習に参加する</a>
             </div>
         </section>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 一色SKクラブ</p>
+            <p>&copy; 2025 ISSHIKI SK CLUB. All Rights Reserved.</p>
         </div>
     </footer>
-
+    
     <script>
-        // --- FAQ アコーディオン機能 ---
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                question.classList.toggle('active');
-                const answer = question.nextElementSibling;
-                if (question.classList.contains('active')) {
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                    answer.style.padding = '20px';
-                } else {
-                    answer.style.maxHeight = null;
-                    answer.style.padding = '0 20px';
-                }
-            });
-        });
-
-        // --- スクロールアニメーション機能 ---
+        // スクロールアニメーション機能
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -513,56 +584,13 @@
                 }
             });
         }, {
-            threshold: 0.1
+            threshold: 0.2 // 20%表示されたら発火
         });
+
         document.querySelectorAll('.animate-on-scroll').forEach(el => {
             observer.observe(el);
         });
-
-        // --- ここから追加したJavaScript ---
-
-        // 1. テキストアニメーション強化
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.js-split-text').forEach(target => {
-                let newText = '';
-                const text = target.textContent;
-                target.style.opacity = '1'; // JS実行前に非表示になるのを防ぐ
-                for (let i = 0; i < text.length; i++) {
-                    let char = (text[i] === ' ') ? '&nbsp;' : text[i];
-                    newText += `<span style="--char-delay: ${i * 0.05}s">${char}</span>`;
-                }
-                target.innerHTML = newText;
-            });
-        });
-
-        // 2. カーソルエフェクト
-        const cursorDot = document.querySelector('.cursor-dot');
-        const cursorOutline = document.querySelector('.cursor-outline');
-        let lastX = 0, lastY = 0;
-
-        // タッチデバイスではカーソルを非表示にする
-        if ('ontouchstart' in window) {
-            cursorDot.style.display = 'none';
-            cursorOutline.style.display = 'none';
-            document.body.style.cursor = 'auto';
-        } else {
-            window.addEventListener('mousemove', e => {
-                const { clientX, clientY } = e;
-                cursorDot.style.opacity = '1';
-                cursorOutline.style.opacity = '1';
-                
-                cursorDot.style.left = `${clientX}px`;
-                cursorDot.style.top = `${clientY}px`;
-                
-                requestAnimationFrame(() => {
-                    lastX += (clientX - lastX) * 0.2;
-                    lastY += (clientY - lastY) * 0.2;
-                    cursorOutline.style.left = `${lastX}px`;
-                    cursorOutline.style.top = `${lastY}px`;
-                });
-            });
-        }
     </script>
+
 </body>
 </html>
-
