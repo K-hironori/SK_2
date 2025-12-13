@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="一色SKクラブは愛知県西尾市の中学軟式野球クラブです。全国の頂きを知るチームで、最高の仲間と本気で野球に向き合いませんか？随時、体験申込受付中！">
+  <meta name="keywords" content="一色SKクラブ,野球,中学軟式,クラブチーム,西尾市,体験申込,初心者歓迎,愛知県">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="一色SKクラブ｜西尾市の中学軟式野球チーム">
+  <meta property="og:description" content="全国の頂きを知るチームで、最高の仲間と、本気で野球に向き合う。西尾市一色町の中学軟式野球クラブ。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://k-hironori.github.io/SK_taiken/">
+  <meta property="og:image" content="https://k-hironori.github.io/SK_taiken/6A7AD99C-1809-4AD1-BC1A-51C8BF3F7D75_1_105_c.jpeg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="一色SKクラブ｜西尾市の中学軟式野球チーム">
+  <meta name="twitter:description" content="全国の頂きを知るチームで、最高の仲間と、本気で野球に向き合う。西尾市一色町の中学軟式野球クラブ。">
+  <meta name="twitter:image" content="https://k-hironori.github.io/SK_taiken/6A7AD99C-1809-4AD1-BC1A-51C8BF3F7D75_1_105_c.jpeg">
+
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==">
+  <title>一色SKクラブ｜西尾市の中学軟式野球チーム</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsOrganization",
+    "name": "一色SKクラブ",
+    "description": "愛知県西尾市の中学軟式野球クラブ。全国の頂きを知るチームで、礼節を重んじ、個性を尊重する指導を行います。",
+    "url": "https://k-hironori.github.io/SK_taiken/",
+    "representative": {
+      "@type": "Person",
+      "name": "伴 千寿樹"
+    }
+  }
+  </script>
+
+  <style>
+    /* ==========================================================================
+       差し替えポイント
+       ========================================================================== */
+    /* 【必須】以下の情報を実際の内容に差し替えてください：
+      1. FORM_URL (JavaScript変数 838行目)         - 体験申込フォームのURL
+      2. LINE_URL (JavaScript変数 839行目, HTML 626行目, 815行目)         - 公式LINE友だち追加URL
+      3. MAP_EMBED (HTML 769行目)         - Google Map埋め込みURL (※住所に基づき更新済み)
+      4. コーチ写真 (HTML 643行目)         - 代表の顔写真    */
+
+    /* ==========================================================================
+       CSS変数定義
+       ========================================================================== */
+    :root {
+      /* カラーパレット */
+      --color-navy: #0F2E5D;
+      --color-red: #E6463B;
+      --color-white: #FFFFFF;
+      --color-gray-light: #F5F5F5;
+      --color-gray-border: #E0E0E0;
+
+      /* スペーシング */
+      --spacing-xs: 8px;
+      --spacing-sm: 20px;
+      --spacing-md: 28px;
+      --spacing-lg: 40px;
+      --spacing-xl: 56px;
+      --spacing-2xl: 72px;
+
+      /* その他 */
+      --border-radius: 12px;
+      --shadow-light: 0 2px 12px rgba(0, 0, 0, 0.06);
+      --font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', sans-serif;
+      --line-height-base: 1.75;
+      --transition: 0.3s ease;
+    }
+
+    /* ==========================================================================
+       リセット & ベーススタイル
+       ========================================================================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-family);
+      font-size: 16px;
+      line-height: var(--line-height-base);
+      color: var(--color-navy);
+      background-color: var(--color-white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-tap-highlight-color: rgba(230, 70, 59, 0.2);
+      overflow-x: hidden;
+    }
+
+    /* ==========================================================================
+       タイポグラフィ
+       ========================================================================== */
+    h1 {
+      font-size: clamp(28px, 8vw, 40px); /* 少し大きく */
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: var(--spacing-sm);
+      word-break: break-word;
+    }
+
+    h2 {
+      font-size: clamp(22px, 6vw, 26px);
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: var(--spacing-md);
+      word-break: break-word;
+    }
+
+    h3 {
+      font-size: clamp(18px, 5vw, 20px);
+      font-weight: 700;
+      line-height: 1.45;
+      margin-bottom: var(--spacing-sm);
+      word-break: break-word;
+    }
+
+    p {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    /* ==========================================================================
+       レイアウト
+       ========================================================================== */
+    .container {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0 var(--spacing-sm);
+    }
+
+    .section {
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .section--navy {
+      background-color: var(--color-navy);
+      color: var(--color-white);
+    }
+
+    .section--gray {
+      background-color: var(--color-gray-light);
+    }
+
+    /* ==========================================================================
+       共通コンポーネント
+       ========================================================================== */
+
+    /* カード */
+    .card {
+      background: var(--color-white);
+      border-radius: var(--border-radius);
+      padding: var(--spacing-md);
+      box-shadow: var(--shadow-light);
+    }
+
+    /* ボタン */
+    .btn {
+      display: inline-block;
+      width: 100%;
+      padding: 20px var(--spacing-md);
+      font-size: 17px;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: all var(--transition);
+      line-height: 1.5;
+      min-height: 64px;
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .btn--primary {
+      background-color: var(--color-red);
+      color: var(--color-white);
+      box-shadow: 0 2px 8px rgba(230, 70, 59, 0.2);
+    }
+
+    .btn--primary:active {
+      background-color: #c7332a;
+      transform: translateY(1px);
+      box-shadow: 0 1px 4px rgba(230, 70, 59, 0.3);
+    }
+
+    .btn--outline {
+      background-color: transparent;
+      color: var(--color-white);
+      border: 3px solid var(--color-white);
+    }
+
+    .btn--outline:active {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(1px);
+    }
+
+    .btn--secondary {
+      background-color: var(--color-white);
+      color: var(--color-navy);
+      border: 3px solid var(--color-navy);
+      box-shadow: 0 2px 8px rgba(15, 46, 93, 0.15);
+    }
+
+    .btn--secondary:active {
+      background-color: var(--color-gray-light);
+      transform: translateY(1px);
+      box-shadow: 0 1px 4px rgba(15, 46, 93, 0.2);
+    }
+
+    .btn:focus-visible {
+      outline: 4px solid rgba(230, 70, 59, 0.6);
+      outline-offset: 3px;
+    }
+
+    .btn + .btn {
+      margin-top: var(--spacing-sm);
+    }
+
+    /* ==========================================================================
+       ヒーローセクション
+       ========================================================================== */
+    .hero {
+      background-image:
+        linear-gradient(rgba(15, 46, 93, 0.75), rgba(15, 46, 93, 0.85)),
+        url('6A7AD99C-1809-4AD1-BC1A-51C8BF3F7D75_1_105_c.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: var(--color-white);
+      padding: var(--spacing-2xl) 0;
+      text-align: center;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 0%, rgba(15, 46, 93, 0.3) 100%);
+      pointer-events: none;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero__content {
+      background-color: rgba(15, 46, 93, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: var(--spacing-lg);
+      border-radius: var(--border-radius);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero__lead {
+      font-size: 18px; /* 少し大きく */
+      margin-bottom: var(--spacing-lg);
+      opacity: 0.96;
+      line-height: 1.8;
+      padding: 0 var(--spacing-xs);
+      white-space: pre-line; /* 追加: 改行を反映 */
+      font-weight: 600; /* 少し太く */
+    }
+
+    /* ==========================================================================
+       ABOUTセクション (新規追加)
+       ========================================================================== */
+    .slogan-wrapper {
+      margin-top: var(--spacing-lg);
+      padding: var(--spacing-md);
+      background-color: var(--color-gray-light);
+      border-radius: var(--border-radius);
+      text-align: center;
+    }
+
+    .slogan {
+      font-size: clamp(18px, 5vw, 22px);
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       活動概要セクション (旧 参加概要)
+       ========================================================================== */
+    .overview__table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 0; /* 下に詳細を追加するためマージン削除 */
+    }
+
+    .overview__table th,
+    .overview__table td {
+      padding: 14px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--color-gray-border);
+      font-size: 15px;
+    }
+
+    .overview__table th {
+      background-color: var(--color-navy);
+      color: var(--color-white);
+      font-weight: 700;
+      width: 32%;
+      vertical-align: top;
+    }
+
+    .overview__table td {
+      background-color: var(--color-white);
+      line-height: 1.7;
+    }
+
+    /* 追加: 会費等の詳細用 */
+    .overview__table td small {
+      font-size: 13px;
+      opacity: 0.9;
+      line-height: 1.5;
+      display: inline-block; /* 改行のため */
+      margin-top: 4px;
+    }
+    .overview__table td strong {
+      font-weight: 700;
+    }
+
+    /* 追加: 活動時間や体験案内のラッパー */
+    .activity-details {
+      margin-top: var(--spacing-lg);
+      padding-top: var(--spacing-md);
+      border-top: 1px solid var(--color-gray-border);
+    }
+    .activity-details h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-bottom: var(--spacing-sm);
+      padding-bottom: 4px;
+      border-bottom: 2px solid var(--color-red);
+    }
+    .activity-details p {
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: var(--spacing-md);
+    }
+    .activity-details__list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: var(--spacing-md);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .activity-details__list li {
+      margin-bottom: 8px;
+    }
+    .activity-details__list li strong {
+      margin-right: 4px;
+    }
+
+    .overview__note {
+      font-size: 14px;
+      color: #666;
+      margin-top: var(--spacing-md);
+    }
+
+    /* ==========================================================================
+       ステップセクション
+       ========================================================================== */
+    .steps {
+      padding: var(--spacing-2xl) 0;
+    }
+    /* 追加: セクション見出し */
+    .steps h2 {
+      text-align: center;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .step {
+      margin-bottom: var(--spacing-lg);
+    }
+    .step:last-child {
+      margin-bottom: 0;
+    }
+    .step__number {
+      display: inline-block;
+      background-color: var(--color-red);
+      color: var(--color-white);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 48px;
+      font-weight: 700;
+      font-size: 20px;
+      margin-bottom: var(--spacing-sm);
+      box-shadow: 0 2px 8px rgba(230, 70, 59, 0.25);
+    }
+    .step__title {
+      font-size: clamp(18px, 5vw, 20px);
+      font-weight: 700;
+      margin-bottom: var(--spacing-sm);
+      line-height: 1.5;
+    }
+    .step__description {
+      margin-bottom: var(--spacing-md);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+    .step__note {
+      font-size: 13px;
+      color: #666;
+      margin-top: var(--spacing-sm);
+      line-height: 1.6;
+      padding: var(--spacing-sm);
+      background-color: #f9f9f9;
+      border-radius: 8px;
+    }
+
+    /* ==========================================================================
+       アクセスセクション
+       ========================================================================== */
+    .access__map {
+      width: 100%;
+      height: 320px;
+      min-height: 280px;
+      border: 0;
+      border-radius: var(--border-radius);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .access__info {
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .access__info p {
+      margin-bottom: 16px;
+      padding: 16px;
+      background-color: var(--color-gray-light);
+      border-radius: 8px;
+      line-height: 1.7;
+    }
+
+    .access__info p:last-child {
+      margin-bottom: 0;
+    }
+
+    .access__info p strong {
+      font-size: 14px;
+      color: var(--color-navy);
+      margin-right: 8px;
+    }
+
+    /* ==========================================================================
+       CTAセクション
+       ========================================================================== */
+    .cta {
+      text-align: center;
+    }
+
+    .cta__title {
+      margin-bottom: var(--spacing-lg);
+    }
+
+    /* ==========================================================================
+       フッター
+       ========================================================================== */
+    .footer {
+      background-color: var(--color-navy);
+      color: var(--color-white);
+      padding: var(--spacing-lg) 0;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .footer__links {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .footer__link {
+      color: var(--color-white);
+      text-decoration: underline;
+      transition: opacity var(--transition);
+    }
+
+    .footer__link:hover,
+    .footer__link:focus {
+      opacity: 0.8;
+    }
+
+    .footer__copyright {
+      margin-top: var(--spacing-sm);
+      opacity: 0.9;
+    }
+
+    /* ==========================================================================
+       トースト通知
+       ========================================================================== */
+    .toast {
+      position: fixed;
+      bottom: var(--spacing-lg);
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--color-navy);
+      color: var(--color-white);
+      padding: 18px var(--spacing-md);
+      border-radius: var(--border-radius);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity var(--transition);
+      pointer-events: none;
+      max-width: calc(100% - 40px);
+      min-width: 280px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .toast--show {
+      opacity: 1;
+    }
+
+    .toast--success {
+      background-color: #2e7d32;
+    }
+
+    .toast--error {
+      background-color: var(--color-red);
+    }
+
+    /* ==========================================================================
+       レスポンシブ対応
+       ========================================================================== */
+
+    /* タブレット以上 */
+    @media (min-width: 430px) {
+      .container {
+        max-width: 430px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        max-width: 600px;
+      }
+
+      .btn {
+        max-width: 420px;
+      }
+    }
+
+    /* ホバー可能デバイス */
+    @media (hover: hover) {
+      .btn--primary:hover {
+        background-color: #d13a2f;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(230, 70, 59, 0.35);
+      }
+
+      .btn--outline:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: translateY(-2px);
+      }
+
+      .btn--secondary:hover {
+        background-color: var(--color-gray-light);
+        border-color: var(--color-red);
+        color: var(--color-red);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(15, 46, 93, 0.25);
+      }
+    }
+
+    /* 小画面スマホ */
+    @media (max-width: 374px) {
+      :root {
+        --spacing-sm: 16px;
+        --spacing-md: 20px;
+      }
+
+      .btn {
+        font-size: 15px;
+        padding: 18px var(--spacing-sm);
+      }
+
+      .overview__table th,
+      .overview__table td {
+        padding: 12px 10px;
+        font-size: 14px;
+      }
+
+      .overview__table th {
+        width: 35%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero__content">
+        <h1>一色SKクラブ</h1>
+        <p class="hero__lead">君たちの野球は、
+ここから始まる。
+全国の頂きを知るチームで、最高の仲間と、
+本気で野球に向き合う。</p>
+        <a href="#application-form" class="btn btn--primary" aria-label="体験お申し込みフォームへ進む">体験お申し込みフォーム</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>ABOUT</h2>
+      <h3>一色SKクラブとは</h3>
+      <p>一色SKクラブは、西尾市一色町にある中学軟式野球クラブです。選手一人ひとりの個性を尊重し、楽しく野球を学べる環境作りを目指しています。地域社会との連携を大切にし、礼節を重んじることを教育理念としています。</p>
+      <div class="slogan-wrapper">
+        <p class="slogan">スローガン<br>「一緒に楽しく野球やろうよ!!」</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--gray">
+    <div class="container">
+      <h2>活動概要</h2>
+      <div class="card">
+        <table class="overview__table">
+          <tbody>
+            <tr>
+              <th>対象</th>
+              <td>中学生（軟式野球）</td>
+            </tr>
+            <tr>
+              <th>練習日</th>
+              <td>毎週 土・日</td>
+            </tr>
+            <tr>
+              <th>練習場所</th>
+              <td>柳原工業Baseballグランド（一色SK専用グランド）<br><small>※詳細は下の「アクセス」をご覧ください</small></td>
+            </tr>
+            <tr>
+              <th>設備</th>
+              <td>マシン3台完備、屋内練習場</td>
+            </tr>
+            <tr>
+              <th>会費</th>
+              <td><strong>月会費：</strong>5,000円 / 1人<br>
+                  <strong>入会金：</strong>5,000円 / 1人<br>
+                  <small>※同家族2人目以降は入会金無料</small></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="activity-details">
+          <h3>活動時間</h3>
+          <ul class="activity-details__list">
+            <li><strong>3月〜11月：</strong>8:00〜17:00</li>
+            <li><strong>7月〜9月：</strong>8:00〜18:00</li>
+            <li><strong>12月〜2月：</strong>8:00〜16:00</li>
+          </ul>
+
+          <h3>体験参加について</h3>
+          <p>体験参加は随時受け付けております。<br>
+             <strong>持ち物：</strong>運動できる服装、飲み物、帽子、タオル<br>
+             <small>※グローブをお持ちの方はご持参ください（貸出も可能です）。</small></p>
+        </div>
+
+        <p class="overview__note">※練習日程や場所は天候等により変更になる場合があります。体験ご希望の方は、まずはお申し込みの上、公式LINEでのご確認をお願いいたします。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps section">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: var(--spacing-lg);">体験参加までの流れ</h2>
+
+      <div class="step" id="application-form">
+        <div class="step__number">1</div>
+        <h3 class="step__title">お申し込み情報の入力</h3>
+        <p class="step__description">まずは、下の「体験お申し込みフォーム」から必要事項をご入力ください。</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeyw6TRjSqQYTm-BUgocQKNOIvGzWWY7yLXo2cyJaRcTQGOjQ/viewform?usp=header" class="btn btn--primary" target="_blank" rel="noopener" aria-label="体験お申し込みフォームへ進む">体験お申し込みフォーム</a>
+      </div>
+
+      <div class="step">
+        <div class="step__number">2</div>
+        <h3 class="step__title">公式LINEでの最終確認</h3>
+        <p class="step__description">フォーム送信が完了しましたら、下のボタンで「体験申込」という文字をコピーしてください。</p>
+        <button type="button" class="btn btn--secondary" id="copyBtn" aria-label="体験申込という文字をクリップボードにコピー">「体験申込」をコピー</button>
+        <p class="step__description" style="margin-top: var(--spacing-md);">コピーした文字を公式LINEのトークに貼り付けて送信してください。LINEでの確認をもって、お申し込み手続き完了となります。</p>
+        <a href="https://lin.ee/t2htjf5" class="btn btn--primary" target="_blank" rel="noopener" aria-label="公式LINEで体験申込を送信する（新しいタブで開きます）">公式LINEで体験申込を送信する</a>
+        <p class="step__note">※返信はチーム代表の"伴"が順次対応します。混み合う場合はお時間をいただくことがあります。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>アクセス</h2>
+      <iframe src="https://maps.google.com/maps?q=%E8%A5%BF%E5%B0%BE%E5%B8%82%E4%B8%80%E8%89%B2%E7%94%BA%E5%9D%82%E7%94%B0%E6%96%B0%E7%94%B0%E6%B2%9684&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              class="access__map"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="一色SKクラブ グラウンド所在地の地図"></iframe>
+      <div class="access__info">
+        <p><strong>【名称】</strong>柳原工業Baseballグランド（一色SK専用グランド）</p>
+        <p><strong>【住所】</strong>愛知県西尾市一色町坂田新田沖84</p>
+        <p><strong>【駐車場】</strong>あり</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--navy">
+    <div class="container cta">
+      <h2 class="cta__title">まずはお気軽に体験申込！</h2>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__links">
+        <a href="#privacy" class="footer__link">プライバシーポリシー</a>
+      </div>
+      <p class="footer__copyright">© 2025 一色SKクラブ</p>
+      <p>代表：伴 千寿樹</p>
+      <p style="font-size: 12px; margin-top: 8px; opacity: 0.8;">GitHub Pages想定の軽量実装</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script>
+    'use strict';
+    // ==========================================================================
+    // 設定変数（差し替えポイント）
+    // ==========================================================================
+    const CONFIG = {
+      FORM_URL: 'https://docs.google.com/forms/d/e/1FAIpQLSeyw6TRjSqQYTm-BUgocQKNOIvGzWWY7yLXo2cyJaRcTQGOjQ/viewform?usp=header',
+      LINE_URL: 'https://lin.ee/t2htjf5',
+      COPY_TEXT: '体験申込'
+    };
+
+    // ==========================================================================
+    // クリップボードコピー機能
+    // ==========================================================================
+    const copyBtn = document.getElementById('copyBtn');
+    const toast = document.getElementById('toast');
+
+    if (copyBtn) {
+      copyBtn.addEventListener('click', async () => {
+        try {
+          // モダンブラウザ: Clipboard API
+          await navigator.clipboard.writeText(CONFIG.COPY_TEXT);
+          showToast('コピーしました！', 'success');
+        } catch (err) {
+          // フォールバック: execCommand
+          const textArea = document.createElement('textarea');
+          textArea.value = CONFIG.COPY_TEXT;
+          textArea.style.position = 'fixed';
+          textArea.style.left = '-9999px';
+          document.body.appendChild(textArea);
+          textArea.select();
+
+          try {
+            document.execCommand('copy');
+            showToast('コピーしました！', 'success');
+          } catch (fallbackErr) {
+            showToast('コピーに失敗しました。', 'error');
+          }
+
+          document.body.removeChild(textArea);
+        }
+      });
+    }
+
+    /**
+     * トースト通知を表示
+     * @param {string} message - 表示メッセージ
+     * @param {string} type - 'success' or 'error'
+     */
+    function showToast(message, type = 'success') {
+      if (!toast) return;
+
+      toast.textContent = message;
+      toast.className = `toast toast--show toast--${type}`;
+
+      setTimeout(() => {
+        toast.classList.remove('toast--show');
+      }, 3000);
+    }
+
+  </script>
+
+</body>
+</html>
