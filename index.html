@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,8 @@
     <meta name="description" content="全国の頂きを知る中学軟式野球チーム「一色SKクラブ」。本気で野球に向き合い、最高の仲間と成長する日々がここにある。君の挑戦を待っている。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
     <style>
         /* --- デザインコンセプト ---
         1. ダークモード基調で力強さと洗練さを両立
@@ -19,9 +21,12 @@
         :root {
             /* カラーパレット（白・紺・赤） */
             --white: #ffffff;
-            --navy: #0b2b50;      /* 紺：基調色 */
-            --navy-600: #17375e;   /* 紺（濃いめ・セクション用） */
-            --accent-red: #c8102e; /* 赤：アクセント */
+            --navy: #0b2b50;
+            /* 紺：基調色 */
+            --navy-600: #17375e;
+            /* 紺（濃いめ・セクション用） */
+            --accent-red: #c8102e;
+            /* 赤：アクセント */
 
             /* 旧変数との互換（参照先を更新） */
             --bg-dark: var(--navy);
@@ -42,7 +47,8 @@
 
         body {
             font-family: 'Noto Sans JP', sans-serif;
-            background-color: var(--white); /* ページ背景は白 */
+            background-color: var(--white);
+            /* ページ背景は白 */
             color: var(--text-primary);
             overflow-x: hidden;
         }
@@ -86,7 +92,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.88); /* 白ベースに合わせて明るいオーバーレイ */
+            background: rgba(255, 255, 255, 0.88);
+            /* 白ベースに合わせて明るいオーバーレイ */
             z-index: -1;
         }
 
@@ -94,10 +101,17 @@
             z-index: 1;
             animation: fadeInHero 1.5s ease-out forwards;
         }
-        
+
         @keyframes fadeInHero {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero-logo {
@@ -110,7 +124,7 @@
             font-size: 3.8rem;
             font-weight: 900;
             margin: 10px 0 20px;
-            text-shadow: 0 5px 20px rgba(0,0,0,0.6);
+            text-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
             line-height: 1.3;
         }
 
@@ -121,13 +135,14 @@
             margin-bottom: 40px;
         }
 
-        
+
 
         /* --- セクション共通スタイル --- */
         .section {
             padding: 120px 0;
             overflow: hidden;
         }
+
         .section-title {
             font-size: 3rem;
             font-weight: 900;
@@ -136,6 +151,7 @@
             position: relative;
             color: var(--navy);
         }
+
         .section-title span {
             display: block;
             font-size: 1rem;
@@ -149,6 +165,7 @@
         .philosophy-section {
             background-color: var(--white);
         }
+
         .philosophy-content {
             text-align: left;
             font-size: 1.25rem;
@@ -160,49 +177,59 @@
             border-left: 4px solid var(--accent-red);
             padding-left: 18px;
         }
+
         .philosophy-content strong {
             color: var(--accent-red);
             font-weight: 700;
         }
 
         /* --- 実績セクション --- */
-        .achievements-section .section-title { text-align: left; }
+        .achievements-section .section-title {
+            text-align: left;
+        }
+
         .achievements-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
             text-align: left;
         }
+
         .achievement-card {
             background: var(--white);
             padding: 40px 30px;
             border-radius: 12px;
-            border: 1px solid rgba(11,43,80,0.1);
+            border: 1px solid rgba(11, 43, 80, 0.1);
             border-top: 4px solid var(--accent-red);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: left;
         }
+
         .achievement-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
         }
+
         .achievement-year {
             font-size: 1.1rem;
             color: var(--text-secondary);
             margin-bottom: 10px;
         }
+
         .achievement-title {
             font-size: 1.8rem;
             font-weight: 900;
             color: var(--accent-red);
             margin-bottom: 15px;
         }
+
         .achievement-description {
             font-size: 1.1rem;
             line-height: 1.9;
             color: var(--navy);
             margin-top: 4px;
         }
+
         .trophy-icon {
             font-size: 3.2rem;
             color: var(--accent-red);
@@ -214,23 +241,27 @@
         .staff-section {
             background-color: var(--white);
         }
+
         .staff-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
         }
+
         .staff-card {
             background-color: var(--white);
             border-radius: 12px;
             overflow: hidden;
             text-align: left;
             transition: transform 0.3s ease;
-            border: 1px solid rgba(11,43,80,0.12);
+            border: 1px solid rgba(11, 43, 80, 0.12);
             border-top: 4px solid var(--accent-red);
         }
+
         .staff-card:hover {
             transform: scale(1.05);
         }
+
         .staff-image {
             width: 100%;
             height: 280px;
@@ -239,28 +270,60 @@
             align-items: center;
             justify-content: center;
             font-size: 3rem;
-            color: rgba(255,255,255,0.2);
+            color: rgba(255, 255, 255, 0.2);
         }
+
         .staff-info {
             padding: 25px;
         }
+
         .staff-role {
             color: var(--accent-red);
             font-weight: 700;
             margin-bottom: 5px;
         }
+
         .staff-name {
             font-size: 1.4rem;
             font-weight: 700;
             color: var(--navy);
         }
-        .staff-note { color: var(--text-secondary); margin-top: 8px; line-height: 1.7; font-size: .95rem; }
+
+        .staff-note {
+            color: var(--text-secondary);
+            margin-top: 8px;
+            line-height: 1.7;
+            font-size: .95rem;
+        }
 
         /* --- 環境紹介セクション --- */
-        .environment-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-        .environment-item { background: var(--white); border: 1px solid rgba(11,43,80,0.12); border-top: 4px solid var(--accent-red); border-radius: 12px; padding: 28px; text-align: left; }
-        .environment-overlay { position: static; background: transparent; color: var(--navy); padding: 0; }
-        .environment-title { font-size: 1.2rem; font-weight: 900; color: var(--navy); }
+        .environment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .environment-item {
+            background: var(--white);
+            border: 1px solid rgba(11, 43, 80, 0.12);
+            border-top: 4px solid var(--accent-red);
+            border-radius: 12px;
+            padding: 28px;
+            text-align: left;
+        }
+
+        .environment-overlay {
+            position: static;
+            background: transparent;
+            color: var(--navy);
+            padding: 0;
+        }
+
+        .environment-title {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: var(--navy);
+        }
 
 
         /* --- CTA (Call to Action) セクション --- */
@@ -268,19 +331,25 @@
             text-align: center;
             background: var(--white);
         }
+
         .cta-title {
             font-size: 2.2rem;
             font-weight: 900;
             line-height: 1.6;
             max-width: 720px;
             margin: 0 auto 28px;
-            text-wrap: balance; /* 見出しの行分割を綺麗に */
+            text-wrap: balance;
+            /* 見出しの行分割を綺麗に */
         }
-        .nowrap { white-space: nowrap; }
+
+        .nowrap {
+            white-space: nowrap;
+        }
+
         .cta-title .highlight {
             color: var(--accent-red);
         }
-        
+
         .btn {
             display: inline-block;
             padding: 18px 45px;
@@ -314,69 +383,200 @@
             transform: translateY(50px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
+
         .animate-on-scroll.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        .stagger-animation > * {
+
+        .stagger-animation>* {
             transition-delay: var(--stagger-delay, 0.2s);
         }
 
         /* --- レスポンシブ --- */
         @media (max-width: 768px) {
-            .hero-title { font-size: 2.5rem; }
-            .hero-subtitle { font-size: 1rem; }
-            .section { padding: 80px 0; }
-            .section-title { font-size: 2.2rem; margin-bottom: 60px; }
-            .philosophy-content { font-size: 1.05rem; line-height: 1.9; }
-            .environment-grid { grid-template-columns: 1fr; }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+                margin-bottom: 60px;
+            }
+
+            .philosophy-content {
+                font-size: 1.05rem;
+                line-height: 1.9;
+            }
+
+            .environment-grid {
+                grid-template-columns: 1fr;
+            }
+
             .environment-item:nth-child(1),
             .environment-item:nth-child(2),
-            .environment-item:nth-child(3) { grid-column: auto; }
-            .cta-title { font-size: 1.45rem; line-height: 1.75; max-width: 92%; margin: 0 auto 22px; }
+            .environment-item:nth-child(3) {
+                grid-column: auto;
+            }
+
+            .cta-title {
+                font-size: 1.45rem;
+                line-height: 1.75;
+                max-width: 92%;
+                margin: 0 auto 22px;
+            }
         }
 
         /* --- 新規: クラブ情報・代表メッセージ用スタイル --- */
-        .info-section { background: var(--white); }
-        .about-brief { max-width: 900px; margin: 0 auto 30px; font-size: 1.05rem; line-height: 1.9; color: var(--navy); }
-        .about-slogan { margin-top: 12px; font-weight: 800; color: var(--accent-red); }
-        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
-        .info-card { background: var(--white); padding: 24px; border-radius: 12px; border: 1px solid rgba(11,43,80,0.12); border-top: 4px solid var(--navy-600); }
-        .info-title { font-size: 1.2rem; font-weight: 900; margin-bottom: 10px; color: var(--navy); }
-        .info-sub { color: var(--text-secondary); margin-top: 8px; font-size: .95rem; }
-        .bullet-list { list-style: none; padding-left: 0; }
-        .bullet-list li { position: relative; padding-left: 20px; margin: 8px 0; color: var(--navy); }
-        .bullet-list li::before { content: '•'; position: absolute; left: 0; color: var(--accent-red); }
+        .info-section {
+            background: var(--white);
+        }
 
-        .message-section { background: var(--white); }
-        .message-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-        .message-card { background: var(--white); padding: 26px; border-radius: 12px; border: 1px solid rgba(11,43,80,0.12); border-top: 4px solid var(--accent-red); }
-        .message-title { font-size: 1.2rem; font-weight: 900; margin-bottom: 12px; color: var(--navy); }
-        .message-text { color: var(--navy); line-height: 1.9; }
+        .about-brief {
+            max-width: 900px;
+            margin: 0 auto 30px;
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--navy);
+        }
 
-        .staff-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px 18px; margin-top: 20px; }
-        .staff-list-item { background: var(--white); padding: 12px 14px; border-radius: 10px; display: flex; justify-content: space-between; align-items: baseline; border: 1px solid rgba(11,43,80,0.12); }
-        .staff-list-role { color: var(--text-secondary); font-weight: 700; margin-right: 8px; }
-        .staff-list-name { color: var(--navy); font-weight: 800; }
+        .about-slogan {
+            margin-top: 12px;
+            font-weight: 800;
+            color: var(--accent-red);
+        }
 
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid rgba(11, 43, 80, 0.12);
+            border-top: 4px solid var(--navy-600);
+        }
+
+        .info-title {
+            font-size: 1.2rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            color: var(--navy);
+        }
+
+        .info-sub {
+            color: var(--text-secondary);
+            margin-top: 8px;
+            font-size: .95rem;
+        }
+
+        .bullet-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 20px;
+            margin: 8px 0;
+            color: var(--navy);
+        }
+
+        .bullet-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-red);
+        }
+
+        .message-section {
+            background: var(--white);
+        }
+
+        .message-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .message-card {
+            background: var(--white);
+            padding: 26px;
+            border-radius: 12px;
+            border: 1px solid rgba(11, 43, 80, 0.12);
+            border-top: 4px solid var(--accent-red);
+        }
+
+        .message-title {
+            font-size: 1.2rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+            color: var(--navy);
+        }
+
+        .message-text {
+            color: var(--navy);
+            line-height: 1.9;
+        }
+
+        .staff-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px 18px;
+            margin-top: 20px;
+        }
+
+        .staff-list-item {
+            background: var(--white);
+            padding: 12px 14px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border: 1px solid rgba(11, 43, 80, 0.12);
+        }
+
+        .staff-list-role {
+            color: var(--text-secondary);
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        .staff-list-name {
+            color: var(--navy);
+            font-weight: 800;
+        }
     </style>
 </head>
+
 <body>
 
     <header class="hero">
         <video playsinline autoplay muted loop id="bg-video">
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-baseball-player-hitting-a-ball-2321-large.mp4" type="video/mp4">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-baseball-player-hitting-a-ball-2321-large.mp4"
+                type="video/mp4">
         </video>
         <div class="hero-content">
             <p class="hero-logo">ISSHIKI SK CLUB</p>
             <h1 class="hero-title">俺たちの野球は、<br>ここから始まる。</h1>
             <p class="hero-subtitle">全国の頂きを知るチームで、最高の仲間と、<br>本気で野球に向き合う。</p>
         </div>
-        
+
     </header>
 
     <main>
-        
+
         <section class="section info-section">
             <div class="container">
                 <h2 class="section-title animate-on-scroll">
@@ -384,7 +584,8 @@
                     一色SKクラブ
                 </h2>
                 <div class="about-brief animate-on-scroll">
-                    <p>一色SKクラブは、西尾市一色町にある中学軟式野球クラブです。選手一人ひとりの個性を尊重し、楽しく野球を学べる環境作りを目指しています。地域社会との連携を大切にし、礼節を重んじることを教育理念としています。</p>
+                    <p>一色SKクラブは、西尾市一色町にある中学軟式野球クラブです。選手一人ひとりの個性を尊重し、楽しく野球を学べる環境作りを目指しています。地域社会との連携を大切にし、礼節を重んじることを教育理念としています。
+                    </p>
                     <p class="about-slogan">スローガン：「一緒に楽しく野球やろうよ!!」</p>
                 </div>
 
@@ -482,17 +683,30 @@
                             <h3 class="staff-name">山口 信二</h3>
                             <p class="staff-note">チームの雰囲気づくりを重視。明るく前向きな環境で、互いに高め合いながら野球を楽しめるよう心がけています。</p>
                         </div>
-                    </div>                </div>
-                <h3 class="section-subtitle animate-on-scroll" style="text-align:left; margin-top:60px; font-size:1.4rem; font-weight:800; color: var(--navy);">その他スタッフ</h3>
-                <div class="staff-list animate-on-scroll">                    <div class="staff-list-item"><span class="staff-list-role">打撃コーチ</span><span class="staff-list-name">杉浦 逸夫</span></div>
-                    <div class="staff-list-item"><span class="staff-list-role">守備コーチ</span><span class="staff-list-name">福田 淳一</span></div>
-                    <div class="staff-list-item"><span class="staff-list-role">投手コーチ</span><span class="staff-list-name">前沢 貴</span></div>
-                    <div class="staff-list-item"><span class="staff-list-role">Under・C監督</span><span class="staff-list-name">大沢 勇太</span></div>
-                    <div class="staff-list-item"><span class="staff-list-role">Under・Cヘッドコーチ</span><span class="staff-list-name">伴 俊介</span></div>
-                    <div class="staff-list-item"><span class="staff-list-role">バッテリーコーチ</span><span class="staff-list-name">金原 稔樹</span></div>
-                    <div class="staff-list-item"><span class="staff-list-role">バッテリーコーチ</span><span class="staff-list-name">稲垣 承</span></div>
-                    <div class="staff-list-item"><span class="staff-list-role">トレーニングコーチ</span><span class="staff-list-name">中嶋 久弥</span></div>
-                    <div class="staff-list-item"><span class="staff-list-role">打撃コーチ</span><span class="staff-list-name">川口 浩規</span></div>
+                    </div>
+                </div>
+                <h3 class="section-subtitle animate-on-scroll"
+                    style="text-align:left; margin-top:60px; font-size:1.4rem; font-weight:800; color: var(--navy);">
+                    その他スタッフ</h3>
+                <div class="staff-list animate-on-scroll">
+                    <div class="staff-list-item"><span class="staff-list-role">打撃コーチ</span><span
+                            class="staff-list-name">杉浦 逸夫</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">守備コーチ</span><span
+                            class="staff-list-name">福田 淳一</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">投手コーチ</span><span
+                            class="staff-list-name">前沢 貴</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">Under・C監督</span><span
+                            class="staff-list-name">大沢 勇太</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">Under・Cヘッドコーチ</span><span
+                            class="staff-list-name">伴 俊介</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">バッテリーコーチ</span><span
+                            class="staff-list-name">金原 稔樹</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">バッテリーコーチ</span><span
+                            class="staff-list-name">稲垣 承</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">トレーニングコーチ</span><span
+                            class="staff-list-name">中嶋 久弥</span></div>
+                    <div class="staff-list-item"><span class="staff-list-role">打撃コーチ</span><span
+                            class="staff-list-name">川口 浩規</span></div>
                 </div>
             </div>
         </section>
@@ -504,20 +718,20 @@
                     野球に打ち込める最高の環境
                 </h2>
                 <div class="environment-grid stagger-animation">
-                     <div class="environment-item animate-on-scroll" style="--stagger-delay: 0.2s;">
-                        
+                    <div class="environment-item animate-on-scroll" style="--stagger-delay: 0.2s;">
+
                         <div class="environment-overlay">
                             <h3 class="environment-title">一色SK専用グラウンド</h3>
                         </div>
                     </div>
                     <div class="environment-item animate-on-scroll" style="--stagger-delay: 0.4s;">
-                        
+
                         <div class="environment-overlay">
                             <h3 class="environment-title">雨天でも万全の屋内練習場</h3>
                         </div>
                     </div>
                     <div class="environment-item animate-on-scroll" style="--stagger-delay: 0.6s;">
-                        
+
                         <div class="environment-overlay">
                             <h3 class="environment-title">バッティングマシン３台完備</h3>
                         </div>
@@ -525,7 +739,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section id="cta" class="section cta-section">
             <div class="container animate-on-scroll">
                 <h2 class="cta-title">
@@ -542,7 +756,7 @@
             <p>&copy; 2025 ISSHIKI SK CLUB. All Rights Reserved.</p>
         </div>
     </footer>
-    
+
     <script>
         // スクロールアニメーション機能
         const observer = new IntersectionObserver((entries) => {
@@ -561,4 +775,5 @@
     </script>
 
 </body>
+
 </html>
